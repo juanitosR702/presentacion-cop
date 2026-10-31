@@ -1,0 +1,45 @@
+EL VIAJERO INVISIBLE
+Presentación interactiva sobre los COP — 10.º grado
+
+CÓMO ABRIRLA
+1. Descomprime esta carpeta completa. No separes index.html de la carpeta assets
+   ni de las hojas styles.css y styles-cine.css.
+2. Abre index.html con doble clic en Chrome, Edge o Firefox.
+3. Si el navegador no carga bien los archivos, abre una terminal en esta carpeta y ejecuta:
+
+   python -m http.server 8123
+
+   Luego visita: http://localhost:8123/index.html
+
+CONEXIÓN
+No necesita internet. Reveal.js, Anime.js y las tipografías ya están dentro de
+assets/vendor y assets/fonts.css, así que funciona sin conexión. Solo los
+enlaces de fuentes (PNUMA, EPA) abren páginas web si hay internet.
+
+CONTROLES
+← → / Espacio   Avanzar y retroceder
+S               Abrir o cerrar el guion del expositor
+M               Abrir o cerrar el mapa de escenas
+F               Pantalla completa
+Esc             Cerrar paneles
+Animación      Los recorridos y demostraciones se inician al entrar en cada escena
+Botón Pausar   (Escena 04) Detener o reanudar la secuencia de características
+Clic tarjeta   (Escena 04) Detenerla y abrir esa característica
+
+DURACIÓN
+18–20 minutos, en 5 bloques y 9 escenas.
+
+CONTENIDO
+- Qué son los COP y sus cuatro características, con secuencias automáticas
+  que pueden pausarse o explorarse manualmente.
+- La Docena Sucia y sus tres rutas de entrada.
+- El caso DDT y la cáscara de los huevos.
+- Biomagnificación en la cadena trófica.
+- Convenio de Estocolmo y acciones locales.
+
+CRÉDITOS Y FUENTES
+PNUMA · Convenio de Estocolmo · OMS · US EPA · AMAP
+Los detalles están en README.md.
+
+---
+Si solo necesitas revisar o imprimir las diapositivas, usa el PDF de la entrega.

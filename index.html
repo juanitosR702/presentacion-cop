@@ -1,0 +1,1600 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Experiencia interactiva de aula sobre los Compuestos Orgánicos Persistentes (COP): persistencia, biomagnificación y Convenio de Estocolmo.">
+  <title>El viajero invisible · COP</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230A192F'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%2364FFDA' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%2364FFDA'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/fonts.css">
+  <link rel="stylesheet" href="assets/vendor/reveal.css">
+  <link rel="stylesheet" href="styles.css?v=20261029a">
+  <link rel="stylesheet" href="styles-cine.css?v=20261030-pyramid-shape-v5">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="hud hud--top">
+    <div class="hud__brand">
+      <span class="pulse-dot" aria-hidden="true"></span>
+      <span>COP</span><span class="hud__slash">/</span><span>ARCHIVO VIVO</span>
+    </div>
+    <div class="hud__center" aria-live="polite">
+      <span id="hudBlock">BLOQUE 01 / APERTURA</span>
+      <span class="hud__divider" aria-hidden="true"></span>
+      <span id="hudScene">EL VIAJERO INVISIBLE</span>
+    </div>
+    <div class="hud__actions">
+      <button class="hud-btn hud-btn--sound" type="button" data-sound-toggle aria-pressed="true" aria-label="Silenciar sonidos" title="Silenciar sonidos">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 10v4h3l5 4V6l-5 4H4Z"/>
+          <path class="sound-on" d="M15 9a5 5 0 0 1 0 6M17.5 6.5a8.5 8.5 0 0 1 0 11"/>
+          <path class="sound-off" d="m16 9 5 6m0-6-5 6"/>
+        </svg>
+        SONIDO
+      </button>
+      <button class="hud-btn" type="button" data-open="notes" aria-label="Abrir guion del expositor (tecla S)">
+        GUION <kbd>S</kbd>
+      </button>
+      <button class="hud-btn" type="button" data-open="map" aria-label="Abrir mapa de escenas (tecla M)">
+        MAPA <kbd>M</kbd>
+      </button>
+      <button class="hud-btn hud-btn--icon" type="button" id="fullscreenBtn" aria-label="Pantalla completa">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="reveal">
+    <div class="slides">
+      <!-- 01 · HERO -->
+      <section class="slide slide--hero slide--dark" data-scene="hero" data-block="01" data-block-title="APERTURA" data-scene-title="EL VIAJERO INVISIBLE">
+        <div class="hero-solar-system" aria-hidden="true">
+          <svg class="solar-diagram" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <radialGradient id="solarSun" cx="34%" cy="31%" r="72%">
+                <stop offset="0" stop-color="#FFE6E1"/>
+                <stop offset=".28" stop-color="#FFB3AA"/>
+                <stop offset=".72" stop-color="#E66E75"/>
+                <stop offset="1" stop-color="#763C61" stop-opacity=".8"/>
+              </radialGradient>
+              <radialGradient id="solarMercury" cx="34%" cy="30%" r="72%"><stop stop-color="#DCE6F4"/><stop offset=".58" stop-color="#77849A"/><stop offset="1" stop-color="#171D29"/></radialGradient>
+              <radialGradient id="solarVenus" cx="32%" cy="28%" r="75%"><stop stop-color="#DDE7F6"/><stop offset=".52" stop-color="#8098B9"/><stop offset="1" stop-color="#293B58"/></radialGradient>
+              <radialGradient id="solarEarth" cx="32%" cy="27%" r="75%"><stop stop-color="#C2F5E6"/><stop offset=".3" stop-color="#66B8C5"/><stop offset=".62" stop-color="#246AA0"/><stop offset="1" stop-color="#07152C"/></radialGradient>
+              <linearGradient id="solarEarthShade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#041020" stop-opacity="0"/><stop offset=".5" stop-color="#041020" stop-opacity=".08"/><stop offset="1" stop-color="#020817" stop-opacity=".82"/></linearGradient>
+              <radialGradient id="solarMars" cx="33%" cy="28%" r="75%"><stop stop-color="#FFB3AA"/><stop offset=".55" stop-color="#A95D67"/><stop offset="1" stop-color="#351A38"/></radialGradient>
+              <radialGradient id="solarJupiter" cx="32%" cy="28%" r="75%"><stop stop-color="#E4EAF6"/><stop offset=".44" stop-color="#A5B1C9"/><stop offset=".78" stop-color="#637695"/><stop offset="1" stop-color="#25243A"/></radialGradient>
+              <radialGradient id="solarSaturn" cx="30%" cy="28%" r="75%"><stop stop-color="#DCE9F6"/><stop offset=".56" stop-color="#9FB6D0"/><stop offset="1" stop-color="#3A3B58"/></radialGradient>
+              <radialGradient id="solarUranus" cx="32%" cy="27%" r="75%"><stop stop-color="#D9FBF1"/><stop offset=".55" stop-color="#76C7C7"/><stop offset="1" stop-color="#173A56"/></radialGradient>
+              <radialGradient id="solarNeptune" cx="32%" cy="27%" r="75%"><stop stop-color="#A7DFFF"/><stop offset=".52" stop-color="#386FD0"/><stop offset="1" stop-color="#101B58"/></radialGradient>
+              <linearGradient id="solarSaturnRings" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#BFD8FF" stop-opacity=".2"/><stop offset=".48" stop-color="#BFD8FF" stop-opacity=".78"/><stop offset="1" stop-color="#9EB9D2" stop-opacity=".26"/></linearGradient>
+              <radialGradient id="solarGlow">
+                <stop offset="0" stop-color="#FF7B72" stop-opacity=".12"/>
+                <stop offset=".55" stop-color="#6FB1F2" stop-opacity=".045"/>
+                <stop offset="1" stop-color="#6FB1F2" stop-opacity="0"/>
+              </radialGradient>
+              <clipPath id="solarEarthClip"><circle cx="500" cy="300" r="22"/></clipPath>
+              <clipPath id="solarJupiterClip"><circle cx="390" cy="220" r="27"/></clipPath>
+              <clipPath id="solarNeptuneClip"><circle cx="205" cy="360" r="15"/></clipPath>
+            </defs>
+            <circle cx="700" cy="300" r="270" fill="url(#solarGlow)"/>
+            <g class="solar-orbits">
+              <ellipse cx="700" cy="300" rx="82" ry="48" class="solar-orbit"/>
+              <ellipse cx="700" cy="300" rx="128" ry="74" class="solar-orbit"/>
+              <ellipse cx="700" cy="300" rx="200" ry="116" class="solar-orbit solar-orbit--earth"/>
+              <ellipse cx="700" cy="300" rx="260" ry="151" class="solar-orbit"/>
+              <ellipse cx="700" cy="300" rx="325" ry="189" class="solar-orbit solar-orbit--outer"/>
+              <ellipse cx="700" cy="300" rx="390" ry="227" class="solar-orbit solar-orbit--outer"/>
+              <ellipse cx="700" cy="300" rx="455" ry="265" class="solar-orbit solar-orbit--outer"/>
+              <ellipse cx="700" cy="300" rx="520" ry="303" class="solar-orbit solar-orbit--outer"/>
+              <path d="M700 66v22M700 512v22M466 300h22M912 300h22" class="solar-radial-ticks"/>
+            </g>
+            <g class="routes">
+              <path class="route-path" data-route="gulf" d="M572 300a128 74 0 1 1 256 0a128 74 0 1 1-256 0"/>
+              <path class="route-path" data-route="ruhr" d="M500 300a200 116 0 1 1 400 0a200 116 0 1 1-400 0"/>
+              <path class="route-path" data-route="pearl" d="M375 300a325 189 0 1 1 650 0a325 189 0 1 1-650 0"/>
+            </g>
+            <circle cx="700" cy="300" r="72" class="solar-sun-halo"/>
+            <circle cx="700" cy="300" r="42" fill="url(#solarSun)" class="solar-sun"/>
+            <path d="M700 244v14M700 342v14M644 300h14M742 300h14" class="solar-sun__rays"/>
+            <circle cx="618" cy="300" r="7" fill="url(#solarMercury)" class="solar-planet solar-planet--mercury"/>
+            <circle cx="593" cy="248" r="10" fill="url(#solarVenus)" class="solar-planet solar-planet--venus"/>
+            <circle cx="500" cy="300" r="22" fill="url(#solarEarth)" class="solar-planet solar-planet--earth"/>
+            <path d="M486 291q8-8 14-2l4 6-5 7-8-2-7 7-7-4zM504 305l9-3 5 6-4 8-7 3-5-7z" clip-path="url(#solarEarthClip)" class="solar-earth-land"/>
+            <g clip-path="url(#solarEarthClip)" class="solar-earth-graticule"><ellipse cx="500" cy="300" rx="11" ry="22"/><path d="M479 292q21 7 42 0M479 307q21-7 42 0"/></g>
+            <circle cx="500" cy="300" r="22" fill="url(#solarEarthShade)" clip-path="url(#solarEarthClip)"/>
+            <circle cx="500" cy="300" r="28" class="solar-earth-atmosphere"/>
+            <circle cx="440" cy="378" r="13" fill="url(#solarMars)" class="solar-planet solar-planet--mars"/>
+            <circle cx="390" cy="220" r="27" fill="url(#solarJupiter)" class="solar-planet solar-planet--jupiter"/>
+            <g clip-path="url(#solarJupiterClip)" class="solar-bands"><path d="M360 210h60M360 221h60M360 232h60"/></g>
+            <ellipse cx="340" cy="300" rx="39" ry="10" transform="rotate(-18 340 300)" fill="none" stroke="url(#solarSaturnRings)" stroke-width="5"/>
+            <circle cx="340" cy="300" r="24" fill="url(#solarSaturn)" class="solar-planet solar-planet--saturn"/>
+            <path d="M314 300a39 10 -18 0 0 52 0" fill="none" stroke="rgba(191,216,255,.68)" stroke-width="1.8"/>
+            <circle cx="310" cy="207" r="18" fill="url(#solarUranus)" class="solar-planet solar-planet--uranus"/>
+            <circle cx="205" cy="360" r="15" fill="url(#solarNeptune)" class="solar-planet solar-planet--neptune"/>
+            <path d="M192 357q12-5 26 0" clip-path="url(#solarNeptuneClip)" class="solar-neptune-storm"/>
+            <g id="heroParticles"></g>
+            <text x="700" y="414" text-anchor="middle" class="solar-label">SOL</text>
+            <text x="500" y="347" text-anchor="middle" class="solar-label solar-label--earth">TIERRA</text>
+            <text x="840" y="91" text-anchor="middle" class="solar-label solar-label--system">SISTEMA SOLAR</text>
+            <text x="840" y="108" text-anchor="middle" class="solar-label solar-label--scale">ESCALA VISUAL</text>
+          </svg>
+        </div>
+
+        <div class="hero-copy">
+          <p class="kicker reveal-item">BLOQUE 01 <span class="kicker__sep">/</span> APERTURA <span class="kicker__time">03 MIN</span></p>
+          <h1 class="display title--hero reveal-item">
+            <span class="line">EL VIAJERO</span>
+            <span class="line line--teal">INVISIBLE</span>
+          </h1>
+          <p class="hero-question reveal-item">
+            ¿Cómo es posible que un químico usado en fábricas de América termine en la sangre de los osos polares del Ártico?
+          </p>
+          <div class="hero-pills reveal-item" aria-label="Cuatro propiedades de los COP">
+            <span><i aria-hidden="true"></i>Persistencia</span>
+            <span><i aria-hidden="true"></i>Bioacumulación</span>
+            <span><i aria-hidden="true"></i>Toxicidad</span>
+            <span><i aria-hidden="true"></i>Movilidad</span>
+          </div>
+          <div class="hero-actions reveal-item">
+            <button class="btn btn--primary" type="button" id="heroPlay">
+              <span>Activar el viaje</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <span class="hero-hint">El recorrido se activa automáticamente.</span>
+          </div>
+        </div>
+
+        <aside class="hero-readout" id="heroReadout" aria-live="polite">
+          <p class="micro-label">LECTURA DEL SENSOR</p>
+          <p class="hero-readout__coord">78° N · 40° O <span>ÁRTICO</span></p>
+          <p class="hero-readout__value">&gt; 10.000 km</p>
+          <p class="hero-readout__text">COP detectados en osos polares, focas y aves marinas. Nunca estuvieron cerca de una fábrica.</p>
+        </aside>
+
+        <div class="hero-signature" aria-hidden="true">
+          <span>C14H9Cl5</span><span>·</span><span>C12H4Cl6</span><span>·</span><span>C12H4Cl4O2</span>
+        </div>
+        <div class="hero-side-label" aria-hidden="true">EXP. 001 / 05</div>
+
+        <aside class="notes">
+          <p><strong>Buenos días a todos.</strong> Hoy les voy a hablar de un grupo de sustancias que no podemos ver, pero que están viajando por todo el mundo: los <strong>Compuestos Orgánicos Persistentes</strong>, o <strong>COP</strong>.</p>
+          <p>Miren la Tierra dentro del sistema solar. Al avanzar, la cámara se acerca hasta ella y comienza el recorrido: estas partículas salen de zonas industriales de América, Europa y Asia. No tienen pasaporte, no necesitan visa. Viajan por el aire y por el agua hasta el Ártico.</p>
+          <p>La pregunta que guía toda la exposición es esta: <strong>¿cómo es posible que un químico usado en una fábrica de América termine en la sangre de los osos polares del Ártico?</strong></p>
+          <p>La respuesta corta: los COP son químicos tóxicos creados por el ser humano que la naturaleza no puede destruir. Una vez que se liberan, se quedan ahí por años, décadas o siglos.</p>
+          <p><em>Pausa.</em> «Lo que lanzamos a la naturaleza nunca desaparece por arte de magia». Vamos a ver qué pasa cuando viaja.</p>
+        </aside>
+      </section>
+      <!-- 02 · MAPA -->
+      <section class="slide slide--map slide--dark" data-scene="map" data-block="01" data-block-title="APERTURA" data-scene-title="CÓMO VIAJA">
+        <div class="slide__inner">
+          <div class="map-slide">
+            <div class="map-slide__copy">
+              <p class="kicker reveal-item">BLOQUE 01 <span class="kicker__sep">/</span> MOVILIDAD</p>
+              <h2 class="display title--xl reveal-item">NO NECESITA<br><span class="accent">PASAPORTE.</span></h2>
+              <p class="lede reveal-item">Se evapora en el calor, viaja con el viento y se condensa en el frío. Es el <strong>transporte a larga distancia</strong>: la propiedad que convierte un problema local en un problema planetario.</p>
+
+              <div class="route-list" role="group" aria-label="Rutas de transporte de COP">
+                <button class="route-card" type="button" data-route="gulf">
+                  <span class="route-card__num">01</span>
+                  <span class="route-card__body"><strong>AIRE</strong><small>Golfo de México → Ártico</small></span>
+                  <span class="route-card__meta">≈ 6.000 km</span>
+                </button>
+                <button class="route-card" type="button" data-route="ruhr">
+                  <span class="route-card__num">02</span>
+                  <span class="route-card__body"><strong>AIRE</strong><small>Europa → Ártico</small></span>
+                  <span class="route-card__meta">≈ 5.000 km</span>
+                </button>
+                <button class="route-card" type="button" data-route="pearl">
+                  <span class="route-card__num">03</span>
+                  <span class="route-card__body"><strong>AGUA + AIRE</strong><small>Asia Oriental → Pacífico → Ártico</small></span>
+                  <span class="route-card__meta">≈ 9.000 km</span>
+                </button>
+              </div>
+
+              <button class="btn btn--ghost btn--small reveal-item" type="button" id="playAllRoutes">
+                Reproducir todas las rutas
+              </button>
+            </div>
+
+            <div class="map-stage-wrap">
+              <div class="map-stage map-stage--large">
+                <canvas class="map-globe-canvas" id="mapGlobeCanvas" aria-hidden="true"></canvas>
+                <img class="world-map" src="assets/world-map.svg" alt="Mapa mundial con focos industriales en América, Europa y Asia, y rutas hacia el Ártico.">
+                <svg class="map-overlay" id="mapSlideOverlay" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                  <defs>
+                    <radialGradient id="mapGlobeAtmosphere">
+                      <stop offset=".62" stop-color="#6FB1F2" stop-opacity="0"/>
+                      <stop offset=".9" stop-color="#6FB1F2" stop-opacity=".08"/>
+                      <stop offset="1" stop-color="#9BCBFF" stop-opacity=".28"/>
+                    </radialGradient>
+                  </defs>
+                  <ellipse class="map-globe-atmosphere" cx="500" cy="250" rx="478" ry="232" fill="url(#mapGlobeAtmosphere)"/>
+                  <g class="map-globe-grid">
+                    <ellipse cx="500" cy="250" rx="478" ry="232"/>
+                    <ellipse cx="500" cy="250" rx="315" ry="232"/>
+                    <ellipse cx="500" cy="250" rx="155" ry="232"/>
+                    <path d="M25 140 C250 215 750 215 975 140"/>
+                    <path d="M22 250 C250 250 750 250 978 250"/>
+                    <path d="M25 360 C250 285 750 285 975 360"/>
+                  </g>
+                  <g class="routes">
+                    <path class="route-path" data-route="gulf" d="M237.5,167.2 C170,120 205,55 300,40 S370,31 388.9,33.3"/>
+                    <path class="route-path" data-route="ruhr" d="M519.4,107.2 C500,80 455,52 405,38 S392,33 388.9,33.3"/>
+                    <path class="route-path" data-route="pearl" d="M814.7,186.7 C870,145 945,102 1000,68"/>
+                    <path class="route-path" data-route="pearl" d="M0,68 C112,31 255,20 388.9,33.3"/>
+                  </g>
+                  <g class="map-markers">
+                    <g class="marker" data-place="gulf" transform="translate(237.5 167.2)"><circle class="marker__ring" r="14"/><circle class="marker__core" r="4"/></g>
+                    <g class="marker" data-place="ruhr" transform="translate(519.4 107.2)"><circle class="marker__ring" r="14"/><circle class="marker__core" r="4"/></g>
+                    <g class="marker" data-place="pearl" transform="translate(814.7 186.7)"><circle class="marker__ring" r="14"/><circle class="marker__core" r="4"/></g>
+                    <g class="marker marker--arctic" data-place="arctic" transform="translate(388.9 33.3)"><circle class="marker__ring" r="22"/><circle class="marker__core" r="5"/></g>
+                  </g>
+                  <g class="map-labels">
+                    <text x="237.5" y="203" text-anchor="middle">GOLFO DE MÉXICO</text>
+                    <text x="540" y="78" text-anchor="start">EUROPA</text>
+                    <text x="814.7" y="223" text-anchor="middle">ASIA ORIENTAL</text>
+                    <text x="388.9" y="18" text-anchor="middle" class="map-label--arctic">ÁRTICO</text>
+                    <text x="890" y="280" text-anchor="middle" class="map-label--ocean">PACÍFICO</text>
+                    <text x="420" y="255" text-anchor="middle" class="map-label--ocean">ATLÁNTICO</text>
+                  </g>
+                  <g id="mapSlideParticles"></g>
+                </svg>
+                <div class="map-scan" aria-hidden="true"></div>
+              </div>
+
+              <div class="map-legend">
+                <div class="temp-scale" aria-hidden="true">
+                  <span class="temp-scale__label">CÁLIDO</span>
+                  <span class="temp-scale__bar"></span>
+                  <span class="temp-scale__label temp-scale__label--cold">FRÍO</span>
+                </div>
+                <p><strong>El frío es una trampa:</strong> el COP se condensa y se queda en el Ártico.</p>
+              </div>
+
+              <div class="grasshopper" aria-label="Efecto saltamontes">
+                <span class="grasshopper__label">EFECTO SALTAMONTES</span>
+                <span class="grasshopper__step"><b>01</b> CALOR → EVAPORA</span>
+                <span class="grasshopper__arrow" aria-hidden="true">→</span>
+                <span class="grasshopper__step"><b>02</b> VIENTO → TRANSPORTA</span>
+                <span class="grasshopper__arrow" aria-hidden="true">→</span>
+                <span class="grasshopper__step"><b>03</b> FRÍO → CONDENSA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="notes">
+          <p>La primera característica que hace especiales a los COP es su <strong>movilidad</strong>. No se quedan donde los liberamos.</p>
+          <p>El mecanismo se llama <strong>transporte a larga distancia</strong>, y tiene un apodo muy gráfico: el <strong>efecto saltamontes</strong>. En un país cálido, el compuesto se evapora; el viento lo lleva; en una zona fría, se condensa y cae. Después vuelve a evaporarse y a saltar. Puede repetir ese ciclo miles de kilómetros.</p>
+          <p>[Señala las rutas.] Desde el Golfo de México, Europa o Asia Oriental, las corrientes de aire y agua lo empujan hacia el norte. El Ártico no lo produce: lo recibe.</p>
+          <p>Por eso los osos polares tienen COP en su grasa aunque nunca hayan visto una fábrica. <em>Pausa.</em> La distancia no protege.</p>
+        </aside>
+      </section>
+      <!-- 03 · DEFINICIÓN -->
+      <section class="slide slide--definition slide--dark" data-scene="definition" data-block="02" data-block-title="CARACTERÍSTICAS" data-scene-title="QUÉ ES UN COP">
+        <div class="slide__inner">
+          <header class="scene-head">
+            <p class="kicker reveal-item">BLOQUE 02 <span class="kicker__sep">/</span> DEFINICIÓN</p>
+            <h2 class="display title--lg reveal-item">NO ES UN VENENO<br><span class="accent">CUALQUIERA.</span></h2>
+          </header>
+
+          <div class="def-grid">
+            <div class="def-copy">
+              <p class="def-lead reveal-item">Un COP es una sustancia <strong>orgánica</strong> —hecha de carbono— y <strong>tóxica.</strong><span class="def-lead__resistance"><strong>RESISTE</strong><span>la degradación.</span></span> No se disuelve en agua: se queda en la grasa. Y no respeta fronteras.</p>
+              <ul class="def-list">
+                <li class="reveal-item"><span class="def-list__num">01</span><div><strong>ORGÁNICO</strong><span>Su esqueleto es una cadena de carbono.</span></div></li>
+                <li class="reveal-item"><span class="def-list__num">02</span><div><strong>HALOGENADO</strong><span>Muchos llevan cloro o bromo: enlaces difíciles de romper.</span></div></li>
+                <li class="reveal-item"><span class="def-list__num">03</span><div><strong>LIPOFÍLICO</strong><span>Ama la grasa y huye del agua. Por eso se acumula.</span></div></li>
+              </ul>
+
+              <div class="resistance reveal-item">
+                <div class="resistance__control">
+                  <p class="micro-label">PRUEBA DE RESISTENCIA</p>
+                  <p class="resistance__prompt"><span>Ataca la molécula. Intenta romperla.</span><span class="resistance__count"><b id="resistCount">0</b><small>/ 3</small></span></p>
+                  <div class="resistance__buttons">
+                    <button class="btn btn--ghost btn--tiny" type="button" data-attack="uv">Sol UV</button>
+                    <button class="btn btn--ghost btn--tiny" type="button" data-attack="water">Agua</button>
+                    <button class="btn btn--ghost btn--tiny" type="button" data-attack="microbes">Bacterias</button>
+                  </div>
+                  <p class="resistance__status" id="resistStatus" aria-live="polite">Sistema intacto. Selecciona un ataque.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="molecule-stage reveal-item" id="moleculeStage">
+              <div class="molecule-meta" aria-hidden="true">
+                <span class="molecule-meta__title">LECTURA ESTRUCTURAL</span>
+                <span><i class="molecule-meta__dot molecule-meta__dot--cl"></i>Cl · halógeno</span>
+                <span><i class="molecule-meta__dot molecule-meta__dot--c"></i>C · esqueleto</span>
+              </div>
+              <svg class="molecule" viewBox="0 0 620 620" role="img" aria-label="Esquema molecular abstracto de un compuesto orgánico persistente con átomos de cloro">
+                <defs>
+                  <filter id="moleculeGlow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="7" result="blur"/>
+                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
+                  <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0" stop-color="#6FB1F2" stop-opacity=".2"/>
+                    <stop offset="1" stop-color="#6FB1F2" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+                <circle cx="310" cy="310" r="220" fill="url(#coreGlow)"/>
+                <circle class="molecule-orbit" cx="310" cy="310" r="244"/>
+                <circle class="molecule-orbit molecule-orbit--dash" cx="310" cy="310" r="286"/>
+                <g class="molecule-rings">
+                  <path class="bond" d="M235 250 L310 205 L385 250 L385 330 L310 375 L235 330 Z"/>
+                  <path class="bond bond--accent" d="M248 258 L310 222 L372 258"/>
+                  <path class="bond" d="M235 330 L160 375 L160 455 L235 500 L310 455 L310 375"/>
+                  <path class="bond" d="M385 330 L460 375 L460 455 L385 500 L310 455"/>
+                  <path class="bond" d="M235 250 L160 205 L160 125"/>
+                  <path class="bond" d="M385 250 L460 205 L460 125"/>
+                  <path class="bond" d="M235 500 L235 560"/>
+                  <path class="bond" d="M385 500 L385 560"/>
+                </g>
+                <g class="atoms">
+                  <g class="atom atom--cl" transform="translate(160 125)"><circle r="27"/><text dy="5">Cl</text></g>
+                  <g class="atom atom--cl" transform="translate(460 125)"><circle r="27"/><text dy="5">Cl</text></g>
+                  <g class="atom atom--cl" transform="translate(235 560)"><circle r="27"/><text dy="5">Cl</text></g>
+                  <g class="atom atom--cl" transform="translate(385 560)"><circle r="27"/><text dy="5">Cl</text></g>
+                  <g class="atom atom--c" transform="translate(310 205)"><circle r="23"/><text dy="5">C</text></g>
+                  <g class="atom atom--c" transform="translate(160 205)"><circle r="23"/><text dy="5">C</text></g>
+                  <g class="atom atom--c" transform="translate(460 205)"><circle r="23"/><text dy="5">C</text></g>
+                  <g class="atom atom--c" transform="translate(160 375)"><circle r="23"/><text dy="5">C</text></g>
+                  <g class="atom atom--c" transform="translate(460 375)"><circle r="23"/><text dy="5">C</text></g>
+                  <g class="atom atom--c" transform="translate(310 455)"><circle r="23"/><text dy="5">C</text></g>
+                </g>
+                <circle class="molecule-shield" id="moleculeShield" cx="310" cy="310" r="250"/>
+                <g class="attack-ripple" id="attackRipple">
+                  <circle cx="310" cy="310" r="60"/>
+                </g>
+              </svg>
+              <p class="molecule-caption">Esquema conceptual. Los COP son una familia, no una sola molécula.</p>
+            </div>
+          </div>
+        <div class="resistance-attack-layer" id="resistanceFlight" aria-hidden="true">
+          <svg class="resistance-trajectory" id="resistanceTrajectory" preserveAspectRatio="none">
+            <defs>
+              <marker id="resistanceArrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+                <path d="M1 1 7 4 1 7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </marker>
+            </defs>
+            <path id="resistanceTrajectoryPath" marker-end="url(#resistanceArrow)"/>
+          </svg>
+          <svg class="resistance-origin-glyph" id="resistanceOriginGlyph" viewBox="0 0 64 64">
+            <g class="origin-mark origin-mark--uv" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5">
+              <path d="M32 4v10m0 36v10M4 32h10m36 0h10M12 12l7 7m26 26 7 7m0-40-7 7m-26 26-7 7"/>
+              <path class="origin-mark__core" d="m32 19 4 9 9 4-9 4-4 9-4-9-9-4 9-4z"/>
+            </g>
+            <g class="origin-mark origin-mark--water" fill="currentColor">
+              <path d="M23 8c-4 7-10 14-10 21a10 10 0 0 0 20 0C33 22 27 15 23 8Z"/>
+              <path d="M46 27c-3 5-7 9-7 14a7 7 0 0 0 14 0c0-5-4-9-7-14Z" opacity=".72"/>
+              <path d="M17 43c-2 4-5 7-5 10a5 5 0 0 0 10 0c0-3-3-6-5-10Z" opacity=".54"/>
+            </g>
+            <g class="origin-mark origin-mark--microbes" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-width="1.6">
+              <rect x="8" y="17" width="24" height="10" rx="5" transform="rotate(-18 20 22)"/>
+              <rect x="34" y="34" width="22" height="10" rx="5" transform="rotate(22 45 39)"/>
+              <rect x="14" y="48" width="17" height="8" rx="4" transform="rotate(-8 22 52)"/>
+              <path d="m9 17-5-5m5 14-6 3m26-16 4-6m3 25-5-5m25 14 5 4m-26 7-3 6" fill="none"/>
+            </g>
+          </svg>
+        </div>
+        </div>
+
+        <aside class="notes">
+          <p>Antes de las cuatro características, necesitamos una definición precisa. Un COP es una sustancia <strong>orgánica</strong>, es decir, basada en carbono; es <strong>tóxica</strong>; y es <strong>resistente</strong> a la degradación.</p>
+          <p>Muchos están <strong>halogenados</strong>: llevan cloro o bromo. Esos enlaces son muy estables. Y son <strong>lipofílicos</strong>: prefieren la grasa antes que el agua. Esa combinación es la receta de un problema.</p>
+          <p>[Haz clic en SOL UV, AGUA y BACTERIAS.] La luz ultravioleta, el agua y las bacterias son los grandes recicladores de la naturaleza. Con un COP, no pueden. La fuente y el trayecto muestran cada ataque; el texto inferior resume el resultado. <em>Pausa después de cada ataque.</em></p>
+          <p>No es que sean indestructibles en sentido absoluto: se degradan muy lentamente. Pero en la escala de una vida humana, es como si no desaparecieran.</p>
+        </aside>
+      </section>
+
+      <!-- 04 · CUATRO CARACTERÍSTICAS -->
+      <section class="slide slide--traits slide--dark" data-scene="traits" data-block="02" data-block-title="CARACTERÍSTICAS" data-scene-title="LAS CUATRO LETALES">
+        <div class="slide__inner">
+          <header class="scene-head scene-head--row">
+            <div>
+              <p class="kicker reveal-item">BLOQUE 02 <span class="kicker__sep">/</span> LAS CUATRO LETALES</p>
+              <h2 class="display title--lg reveal-item">CUATRO PROPIEDADES.<br><span class="accent">UN MISMO DESTINO.</span></h2>
+            </div>
+            <p class="scene-head__note reveal-item">Ninguna es suficiente por sí sola.<br>Juntas convierten un químico en un problema global.</p>
+          </header>
+
+          <div class="traits-grid">
+            <div class="trait-cards" role="tablist" aria-label="Características de los COP">
+              <button class="trait-card is-active" type="button" role="tab" aria-selected="true" aria-controls="trait-panel-persistence" data-trait="persistence">
+                <span class="trait-card__num">01</span>
+                <svg class="trait-card__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5 40 14v20L24 43 8 34V14Z"/><path d="M24 13v22M15 18l18 12M33 18 15 30"/></svg>
+                <strong>PERSISTENCIA</strong>
+                <small>Se degrada lentamente.</small>
+              </button>
+              <button class="trait-card" type="button" role="tab" aria-selected="false" aria-controls="trait-panel-bioaccumulation" data-trait="bioaccumulation">
+                <span class="trait-card__num">02</span>
+                <svg class="trait-card__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6c7 10 12 16 12 23a12 12 0 0 1-24 0c0-7 5-13 12-23Z"/><circle cx="20" cy="30" r="2"/><circle cx="27" cy="26" r="2"/><circle cx="25" cy="34" r="2"/></svg>
+                <strong>BIOACUMULACIÓN</strong>
+                <small>Aumenta dentro del organismo.</small>
+              </button>
+              <button class="trait-card" type="button" role="tab" aria-selected="false" aria-controls="trait-panel-toxicity" data-trait="toxicity">
+                <span class="trait-card__num">03</span>
+                <svg class="trait-card__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 34h8l5-14 7 22 5-16 3 8h8"/><path d="M6 10h36"/></svg>
+                <strong>TOXICIDAD</strong>
+                <small>Daña en dosis mínimas.</small>
+              </button>
+              <button class="trait-card" type="button" role="tab" aria-selected="false" aria-controls="trait-panel-mobility" data-trait="mobility">
+                <span class="trait-card__num">04</span>
+                <svg class="trait-card__icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18"/><path d="M6 24h36M24 6c6 6 9 12 9 18s-3 12-9 18c-6-6-9-12-9-18s3-12 9-18Z"/></svg>
+                <strong>MOVILIDAD</strong>
+                <small>Viaja sin fronteras.</small>
+              </button>
+            </div>
+
+            <aside class="trait-detail">
+              <button class="trait-auto-toggle" id="traitAutoToggle" type="button" aria-label="Pausar la secuencia automática" aria-pressed="true">
+                <span class="trait-auto-toggle__glyph" aria-hidden="true"><span></span><span></span></span>
+                <span class="trait-auto-toggle__label">Pausar</span>
+              </button>
+              <article class="trait-panel is-active" id="trait-panel-persistence" data-trait-panel="persistence" role="tabpanel">
+                <div class="trait-panel__visual">
+                  <svg class="trait-art trait-art--persist" viewBox="0 0 620 480" role="img" aria-label="Un COP resiste la radiación, la lluvia y las bacterias durante cincuenta años">
+                    <defs>
+                      <radialGradient id="persistSun" cx="50%" cy="50%" r="50%">
+                        <stop offset="0" stop-color="#FFD6A0" stop-opacity=".9"/>
+                        <stop offset=".55" stop-color="#FF9E72" stop-opacity=".45"/>
+                        <stop offset="1" stop-color="#FF7B72" stop-opacity="0"/>
+                      </radialGradient>
+                      <linearGradient id="persistTime" x1="0" x2="1">
+                        <stop offset="0" stop-color="#6FB1F2" stop-opacity="0"/>
+                        <stop offset=".5" stop-color="#6FB1F2"/>
+                        <stop offset="1" stop-color="#FF7B72" stop-opacity="0"/>
+                      </linearGradient>
+                      <filter id="persistGlow" x="-70%" y="-70%" width="240%" height="240%">
+                        <feGaussianBlur stdDeviation="7" result="blur"/>
+                        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                      </filter>
+                    </defs>
+
+                    <g class="persist-scene">
+                      <path class="art-strata" d="M0 330h620v150H0Z"/>
+                      <path class="art-strata art-strata--2" d="M0 364c74-12 132 8 206 0s140-12 210 0 140 8 204-4v120H0Z"/>
+                      <path class="art-strata art-strata--3" d="M0 414c62 6 122-8 192 0s152 10 220 0 142-4 208 2v64H0Z"/>
+                      <g class="art-strata-dots">
+                        <circle cx="54" cy="392" r="2"/><circle cx="178" cy="438" r="1.6"/><circle cx="262" cy="378" r="1.4"/>
+                        <circle cx="376" cy="452" r="2"/><circle cx="458" cy="392" r="1.5"/><circle cx="566" cy="436" r="1.8"/>
+                        <circle cx="112" cy="456" r="1.4"/><circle cx="512" cy="368" r="1.4"/>
+                      </g>
+
+                      <g transform="translate(110 100)">
+                        <circle class="p-sun-halo" r="74" fill="url(#persistSun)"/>
+                        <g class="p-sun-rays">
+                          <path d="M0-50v-17M0 50v17M-50 0h-17M50 0h17M-35-35l-12-12M35 35l12 12M35-35l12-12M-35 35l-12 12"/>
+                        </g>
+                        <circle class="p-sun-core" r="29"/>
+                        <circle class="p-sun-inner" r="18"/>
+                      </g>
+                      <text class="art-label" x="110" y="178" text-anchor="middle">RADIACIÓN UV</text>
+
+                      <g transform="translate(486 98)">
+                        <path class="p-cloud" d="M-58 18c-20 0-30-14-26-29 4-16 20-22 34-18 3-18 20-30 38-26 16 4 25 16 27 30 16-4 30 6 31 21 1 14-10 22-24 22Z"/>
+                        <g class="p-rain">
+                          <line x1="-38" y1="30" x2="-38" y2="52"/><line x1="-16" y1="30" x2="-16" y2="52"/>
+                          <line x1="6" y1="30" x2="6" y2="52"/><line x1="28" y1="30" x2="28" y2="52"/>
+                          <line x1="46" y1="30" x2="46" y2="52"/>
+                        </g>
+                      </g>
+                      <text class="art-label" x="486" y="178" text-anchor="middle">LLUVIA</text>
+
+                      <g transform="translate(92 376)">
+                        <g class="p-microbe">
+                          <rect x="-22" y="-9" width="44" height="18" rx="9"/>
+                          <path d="M22 0c9-6 15 6 24 0M-22 0c-9 6-15-6-24 0"/>
+                          <circle class="p-microbe__eye" cx="-7" cy="-2" r="2"/><circle class="p-microbe__eye" cx="7" cy="-2" r="2"/>
+                        </g>
+                      </g>
+                      <text class="art-label" x="92" y="414" text-anchor="middle">BACTERIAS</text>
+                      <g transform="translate(536 384) scale(.72)">
+                        <g class="p-microbe p-microbe--2">
+                          <rect x="-22" y="-9" width="44" height="18" rx="9"/>
+                          <path d="M22 0c9-6 15 6 24 0M-22 0c-9 6-15-6-24 0"/>
+                          <circle class="p-microbe__eye" cx="-7" cy="-2" r="2"/><circle class="p-microbe__eye" cx="7" cy="-2" r="2"/>
+                        </g>
+                      </g>
+
+                      <path class="p-beam p-beam--1" d="M136 150c52 34 104 60 140 76"/>
+                      <path class="p-beam p-beam--2" d="M452 160c-40 28-82 50-126 68"/>
+                      <path class="p-beam p-beam--3" d="M124 360c54-28 106-58 146-90"/>
+
+                      <g transform="translate(312 240) scale(1.08)">
+                        <circle class="p-shield p-shield--outer" r="104"/>
+                        <circle class="p-shield p-shield--inner" r="83"/>
+                        <g class="p-ripples">
+                          <circle r="82"/><circle r="82"/><circle r="82"/>
+                        </g>
+                        <g class="p-molecule">
+                          <circle class="p-orb" r="62"/>
+                          <ellipse class="p-orbit" rx="74" ry="25" transform="rotate(-26)"/>
+                          <ellipse class="p-orbit p-orbit--2" rx="74" ry="25" transform="rotate(34)"/>
+                          <path class="p-hex" d="M0-47 41-23V23L0 47-41 23V-23Z"/>
+                          <path class="p-hex-inner" d="M0-32 28-16V16L0 32-28 16V-16Z"/>
+                          <path class="p-bonds" d="M0-47V-32M41-23 28-16M41 23 28 16M0 47V32M-41 23-28 16M-41-23-28-16"/>
+                          <circle class="p-hex-core" r="18"/>
+                          <text class="p-cop" y="4.5" text-anchor="middle">COP</text>
+                        </g>
+                      </g>
+
+                      <g class="p-badge" transform="translate(312 396)">
+                        <rect x="-84" y="-14" width="168" height="28" rx="14"/>
+                        <circle cx="-66" cy="0" r="3"/>
+                        <text y="3.5" text-anchor="middle">DEGRADACIÓN &lt; 5 %</text>
+                      </g>
+
+                      <g class="p-time">
+                        <line class="p-time__base" x1="86" y1="444" x2="534" y2="444"/>
+                        <g class="p-time__ticks">
+                          <line x1="86" y1="439" x2="86" y2="449"/><line x1="146" y1="441" x2="146" y2="447"/>
+                          <line x1="206" y1="439" x2="206" y2="449"/><line x1="266" y1="441" x2="266" y2="447"/>
+                          <line x1="326" y1="439" x2="326" y2="449"/><line x1="386" y1="441" x2="386" y2="447"/>
+                          <line x1="446" y1="439" x2="446" y2="449"/><line x1="506" y1="441" x2="506" y2="447"/>
+                          <line x1="534" y1="439" x2="534" y2="449"/>
+                        </g>
+                        <line class="p-time__glow" x1="86" y1="444" x2="534" y2="444"/>
+                        <circle class="p-time__dot" cx="86" cy="444" r="4.5"/>
+                        <text x="86" y="466" text-anchor="middle">0</text>
+                        <text x="312" y="466" text-anchor="middle">25</text>
+                        <text x="534" y="466" text-anchor="middle">50 AÑOS</text>
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+                <div class="trait-panel__copy">
+                  <span class="trait-panel__index">01 / PERSISTENCIA</span>
+                  <h3>El tiempo no lo borra.</h3>
+                  <p>Resiste la luz solar, el agua y la acción de los microorganismos. Lo que para otro químico sería una semana, para un COP pueden ser décadas.</p>
+                  <dl class="trait-facts"><div><dt>VIDA MEDIA AMBIENTAL</dt><dd>Años a décadas en suelo y sedimentos.</dd></div><div><dt>CONSECUENCIA</dt><dd>Cada liberación se suma a la siguiente.</dd></div></dl>
+                </div>
+              </article>
+
+              <article class="trait-panel" id="trait-panel-bioaccumulation" data-trait-panel="bioaccumulation" role="tabpanel" hidden>
+                <div class="trait-panel__visual">
+                  <svg class="trait-art trait-art--bio" viewBox="0 0 620 480" role="img" aria-label="El COP entra con el alimento y se acumula en el tejido graso del pez">
+                    <defs>
+                      <linearGradient id="bioBody" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="#6FB1F2" stop-opacity=".12"/>
+                        <stop offset="1" stop-color="#0A1D3A" stop-opacity=".08"/>
+                      </linearGradient>
+                      <linearGradient id="bioGauge" x1="0" y1="1" x2="0" y2="0">
+                        <stop offset="0" stop-color="#6FB1F2"/>
+                        <stop offset=".55" stop-color="#FFB07A"/>
+                        <stop offset="1" stop-color="#FF7B72"/>
+                      </linearGradient>
+                      <clipPath id="bioBellyClip">
+                        <path d="M126 270C188 316 328 328 414 274 398 318 342 336 284 338 216 340 158 316 126 270Z"/>
+                      </clipPath>
+                      <clipPath id="bioFishClip">
+                        <path d="M78 252C116 172 214 134 320 148c48 6 86 26 116 52l60-46 18 96-18 96-60-46c-30 26-68 46-116 52-106 16-204-22-242-100Z"/>
+                      </clipPath>
+                    </defs>
+
+                    <g class="bio-scene">
+                      <text class="art-label" x="42" y="104" text-anchor="middle">ALIMENTO</text>
+                      <g class="b-prey" transform="translate(0 0)">
+                        <path d="M22 150c12-14 34-16 48-4l20-13 5 21-5 21-20-13c-14 12-36 10-48-4Z"/>
+                        <circle class="b-prey__eye" cx="38" cy="147" r="2.6"/>
+                        <path class="b-prey__fin" d="M50 136c5-8 13-9 18-5"/>
+                      </g>
+
+                      <g class="b-fish">
+                        <path class="b-body" d="M78 252C116 172 214 134 320 148c48 6 86 26 116 52l60-46 18 96-18 96-60-46c-30 26-68 46-116 52-106 16-204-22-242-100Z" fill="url(#bioBody)"/>
+                        <path class="b-belly" d="M108 280C176 340 330 354 418 290 402 340 342 364 284 366 214 368 146 338 108 280Z"/>
+                        <g class="b-fatcells" transform="translate(222 278)">
+                          <path d="M0-20 17-10V11L0 21-17 11V-10Z"/>
+                          <path d="M36-12 53-2v21L36 29 19 19V2Z"/>
+                          <path d="M15 32 32 42v21L15 73-2 63V42Z"/>
+                          <path d="M-18 20 0 30v20L-18 60-35 50V30Z"/>
+                        </g>
+                        <g class="b-fatdots">
+                          <circle cx="238" cy="300" r="3.4"/><circle cx="274" cy="318" r="2.6"/><circle cx="310" cy="296" r="3.6"/>
+                          <circle cx="340" cy="318" r="2.4"/><circle cx="372" cy="300" r="3"/><circle cx="196" cy="318" r="2.5"/>
+                          <circle cx="292" cy="340" r="2.2"/><circle cx="326" cy="334" r="2.8"/><circle cx="258" cy="336" r="2"/>
+                          <circle cx="354" cy="334" r="1.9"/><circle cx="216" cy="342" r="1.8"/><circle cx="386" cy="318" r="2"/>
+                        </g>
+                        <path class="b-gill" d="M172 198c18 30 18 78 0 108"/>
+                        <path class="b-mouth" d="M80 250c14-4 24 0 34 8"/>
+                        <path class="b-jaw" d="M80 252c10 7 22 12 34 8"/>
+                        <circle class="b-eye" cx="122" cy="222" r="5.6"/>
+                        <circle class="b-eye__glint" cx="124" cy="220" r="1.5"/>
+                        <path class="b-fin" d="M300 150c18-30 44-38 70-28-18 18-34 34-46 52Z"/>
+                        <path class="b-fin b-fin--lower" d="M286 330c8 22 22 32 42 30-12-14-18-28-20-42Z"/>
+                      </g>
+
+                      <g class="b-ingestion" clip-path="url(#bioFishClip)">
+                        <path class="b-trail" d="M104 258C128 258 148 272 168 286c20 14 37 20 58 21 24 1 40-8 58-8M157 278c14-17 33-23 54-18m-31 47c13 17 30 26 52 29m-7-43c16-15 34-19 52-13"/>
+                        <g class="b-flow">
+                          <circle class="b-particle b-particle--1" r="3.6"/>
+                          <circle class="b-particle b-particle--2" r="3"/>
+                          <circle class="b-particle b-particle--3" r="4"/>
+                          <circle class="b-particle b-particle--4" r="2.8"/>
+                        </g>
+                      </g>
+
+                      <path class="b-leader" d="M300 356v20"/>
+                      <text class="art-label" x="300" y="392" text-anchor="middle">TEJIDO ADIPOSO</text>
+
+                      <g class="b-gauge" transform="translate(560 138)">
+                        <text class="art-label" x="0" y="-16" text-anchor="middle">CARGA</text>
+                        <rect class="b-gauge__track" x="-10" y="0" width="20" height="204" rx="10"/>
+                        <rect class="b-gauge__fill" x="-10" y="0" width="20" height="204" rx="10" fill="url(#bioGauge)"/>
+                        <g class="b-gauge__ticks">
+                          <line x1="14" y1="0" x2="22" y2="0"/><line x1="14" y1="102" x2="22" y2="102"/><line x1="14" y1="204" x2="22" y2="204"/>
+                        </g>
+                        <text class="b-gauge__num" x="28" y="204" text-anchor="start">0</text>
+                        <text class="b-gauge__num" x="28" y="4" text-anchor="start">100</text>
+                        <text class="art-label" x="0" y="232" text-anchor="middle">EDAD</text>
+                        <path class="b-gauge__arrow" d="M-4 220h8m-4-5 4 5-4 5"/>
+                      </g>
+
+                      <g class="b-caption" transform="translate(306 440)">
+                        <line x1="-160" y1="-18" x2="160" y2="-18"/>
+                        <text x="0" y="4" text-anchor="middle">LA CARGA PUEDE AUMENTAR CON LA EXPOSICIÓN</text>
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+                <div class="trait-panel__copy">
+                  <span class="trait-panel__index">02 / BIOACUMULACIÓN</span>
+                  <h3>La carga crece en el organismo.</h3>
+                  <p>El COP entra desde el ambiente o los alimentos. Si el organismo lo incorpora más rápido de lo que lo elimina, su carga aumenta; muchos COP pueden quedar almacenados en el tejido adiposo.</p>
+                  <dl class="trait-facts"><div><dt>DÓNDE SE MIDE</dt><dd>En grasa: mg/kg de lípido, no en agua.</dd></div><div><dt>CONSECUENCIA</dt><dd>La carga puede aumentar con la exposición sostenida.</dd></div></dl>
+                </div>
+              </article>
+
+              <article class="trait-panel" id="trait-panel-toxicity" data-trait-panel="toxicity" role="tabpanel" hidden>
+                <div class="trait-panel__visual">
+                  <svg class="trait-art trait-art--tox" viewBox="0 0 620 480" role="img" aria-label="Un COP ocupa el receptor celular y bloquea la señal hormonal incluso a dosis mínima">
+                    <defs>
+                      <linearGradient id="toxCurve" x1="0" y1="1" x2="1" y2="0">
+                        <stop offset="0" stop-color="#FF7B72" stop-opacity=".25"/>
+                        <stop offset="1" stop-color="#FF7B72"/>
+                      </linearGradient>
+                      <linearGradient id="toxFill" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#FF7B72" stop-opacity=".1"/>
+                        <stop offset="1" stop-color="#FF7B72" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="toxSignalFade" x1="1" y1="0" x2="0" y2="0">
+                        <stop offset="0" stop-color="#8FC0FF"/>
+                        <stop offset="1" stop-color="#8FC0FF" stop-opacity="0"/>
+                      </linearGradient>
+                    </defs>
+
+                    <g class="tox-scene">
+                      <g class="tox-graph">
+                        <rect class="art-panel" x="36" y="46" width="252" height="224" rx="9"/>
+                        <text class="art-eyebrow" x="54" y="72">DOSIS–RESPUESTA</text>
+                        <g class="tox-grid">
+                          <line x1="62" y1="192" x2="266" y2="192"/>
+                          <line x1="62" y1="146" x2="266" y2="146"/>
+                          <line x1="62" y1="100" x2="266" y2="100"/>
+                        </g>
+                        <path class="tox-fill" d="M62 234c24 0 34-20 46-52s32-74 78-82c24-4 50-2 76 6v128Z" fill="url(#toxFill)"/>
+                        <path class="tox-axis" d="M62 238V96M62 238h204"/>
+                        <text class="tox-axis-label" x="62" y="88">RESPUESTA</text>
+                        <text class="tox-axis-label" x="238" y="256" text-anchor="middle">DOSIS →</text>
+                        <path class="tox-curve" d="M62 234c24 0 34-20 46-52s32-74 78-82c24-4 50-2 76 6" stroke="url(#toxCurve)"/>
+                        <line class="tox-lowdose" x1="104" y1="192" x2="104" y2="238"/>
+                        <circle class="tox-marker-ring" cx="104" cy="192" r="8"/>
+                        <circle class="tox-marker-ring tox-marker-ring--2" cx="104" cy="192" r="8"/>
+                        <circle class="tox-marker" cx="104" cy="192" r="4"/>
+                        <path class="tox-callout" d="M112 188 136 164h6"/>
+                        <text class="tox-marker-label" x="147" y="160">DOSIS MÍNIMA</text>
+                        <text class="tox-marker-sub" x="147" y="172">EFECTO YA VISIBLE</text>
+                      </g>
+
+                      <text class="art-label" x="312" y="300">MEDIO EXTRACELULAR</text>
+                      <text class="art-label" x="312" y="394">INTERIOR CELULAR</text>
+                      <text class="art-label" x="518" y="198" text-anchor="start">RECEPTOR CELULAR</text>
+                      <text class="tox-blocked-label" x="516" y="246" text-anchor="start">BLOQUEADO</text>
+                      <circle class="tox-blocked-dot" cx="506" cy="242" r="2.2"/>
+
+                      <g class="tox-membrane">
+                        <g class="tox-heads">
+                          <circle cx="314" cy="326" r="4.4"/><circle cx="334" cy="326" r="4.4"/><circle cx="354" cy="326" r="4.4"/>
+                          <circle cx="374" cy="326" r="4.4"/><circle cx="394" cy="326" r="4.4"/><circle cx="414" cy="326" r="4.4"/>
+                          <circle cx="434" cy="326" r="4.4"/><circle cx="454" cy="326" r="4.4"/><circle cx="474" cy="326" r="4.4"/>
+                          <circle cx="494" cy="326" r="4.4"/><circle cx="514" cy="326" r="4.4"/><circle cx="534" cy="326" r="4.4"/>
+                          <circle cx="554" cy="326" r="4.4"/><circle cx="574" cy="326" r="4.4"/><circle cx="594" cy="326" r="4.4"/>
+                          <circle cx="314" cy="352" r="4.4"/><circle cx="334" cy="352" r="4.4"/><circle cx="354" cy="352" r="4.4"/>
+                          <circle cx="374" cy="352" r="4.4"/><circle cx="394" cy="352" r="4.4"/><circle cx="414" cy="352" r="4.4"/>
+                          <circle cx="434" cy="352" r="4.4"/><circle cx="454" cy="352" r="4.4"/><circle cx="474" cy="352" r="4.4"/>
+                          <circle cx="494" cy="352" r="4.4"/><circle cx="514" cy="352" r="4.4"/><circle cx="534" cy="352" r="4.4"/>
+                          <circle cx="554" cy="352" r="4.4"/><circle cx="574" cy="352" r="4.4"/><circle cx="594" cy="352" r="4.4"/>
+                        </g>
+                        <g class="tox-tails">
+                          <path d="M314 330v18M334 330v18M354 330v18M374 330v18M394 330v18M414 330v18M434 330v18M454 330v18M474 330v18M494 330v18M514 330v18M534 330v18M554 330v18M574 330v18M594 330v18"/>
+                        </g>
+                      </g>
+
+                      <g class="tox-receptor-group">
+                        <rect class="tox-receptor" x="423" y="214" width="74" height="178" rx="32"/>
+                        <path class="tox-receptor__band" d="M425 286h70M425 326h70"/>
+                        <path class="tox-receptor__shine" d="M435 274v-28c0-20 11-32 27-32"/>
+                        <path class="tox-receptor__pocket" d="M440 214h38v22l-19 18-19-18Z"/>
+                        <circle class="tox-dock" cx="459" cy="236" r="11"/>
+                        <g class="tox-cop">
+                          <path d="M459 222l14 8v16l-14 8-14-8v-16Z"/>
+                          <text x="459" y="240" text-anchor="middle">COP</text>
+                        </g>
+                        <circle class="tox-block-ring" cx="459" cy="236" r="19"/>
+                      </g>
+
+                      <g transform="translate(378 194)">
+                        <g class="tox-hormone">
+                          <path d="M0-11 10-6v11L0 11-10 6V-6Z"/>
+                          <path class="tox-hormone__tail" d="M-10 0h-9M10 0h9"/>
+                          <text class="tox-hormone__label" x="0" y="-21" text-anchor="middle">HORMONA</text>
+                        </g>
+                      </g>
+                      <path class="tox-approach" d="M392 210c14 8 28 16 42 24"/>
+                      <path class="tox-approach__head" d="M430 230l8 5-9 1"/>
+
+                      <path class="tox-signal" d="M322 414c12-18 24-18 36 0s24 18 36 0 24-18 36 0 24 10 36 4 24-2 36 0 24 0 36 0 24 0 36 0" stroke="url(#toxSignalFade)"/>
+                      <text class="tox-signal-label" x="520" y="444" text-anchor="middle">SEÑAL ATENUADA</text>
+
+                      <g class="tox-mechanism">
+                        <text class="art-eyebrow" x="36" y="326">MECANISMO</text>
+                        <text class="art-statement" x="36" y="352">IMITA O BLOQUEA</text>
+                        <text class="art-statement" x="36" y="372">HORMONAS</text>
+                        <text class="art-label" x="36" y="400">AUNQUE LA DOSIS SEA MÍNIMA</text>
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+                <div class="trait-panel__copy">
+                  <span class="trait-panel__index">03 / TOXICIDAD</span>
+                  <h3>Pequeñas dosis, grandes efectos.</h3>
+                  <p>Muchos COP son disruptores endocrinos: imitan o bloquean hormonas. Otros afectan el sistema inmune, el desarrollo o el sistema nervioso.</p>
+                  <dl class="trait-facts"><div><dt>EFECTOS DOCUMENTADOS</dt><dd>Cáncer, alteraciones reproductivas, daño neurológico e inmunológico.</dd></div><div><dt>CLAVE</dt><dd>La dosis y el momento de exposición importan.</dd></div></dl>
+                </div>
+              </article>
+
+              <article class="trait-panel" id="trait-panel-mobility" data-trait-panel="mobility" role="tabpanel" hidden>
+                <div class="trait-panel__visual">
+                  <svg class="trait-art trait-art--mob" viewBox="0 0 620 480" role="img" aria-label="Partículas de COP viajan desde zonas cálidas y se condensan en el Ártico">
+                    <defs>
+                      <radialGradient id="mobSphere" cx="34%" cy="28%" r="80%">
+                        <stop offset="0" stop-color="#164376"/>
+                        <stop offset=".52" stop-color="#0A1D3A"/>
+                        <stop offset="1" stop-color="#030812"/>
+                      </radialGradient>
+                      <linearGradient id="mobWarm" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#FF9E72" stop-opacity="0"/>
+                        <stop offset=".5" stop-color="#FF9E72" stop-opacity=".45"/>
+                        <stop offset="1" stop-color="#FF7B72" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="mobShade" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset=".35" stop-color="#020812" stop-opacity="0"/>
+                        <stop offset="1" stop-color="#020812" stop-opacity=".62"/>
+                      </linearGradient>
+                      <clipPath id="mobClip"><circle cx="268" cy="238" r="152"/></clipPath>
+                    </defs>
+
+                    <g class="mob-scene">
+                      <text class="art-eyebrow" x="36" y="54">TRANSPORTE ATMOSFÉRICO</text>
+                      <text class="art-label" x="36" y="76">EFECTO SALTAMONTES</text>
+                      <text class="art-label" x="268" y="72" text-anchor="middle">ÁRTICO</text>
+
+                      <circle class="mob-globe" cx="268" cy="238" r="152" fill="url(#mobSphere)"/>
+                      <g clip-path="url(#mobClip)">
+                        <rect x="116" y="198" width="304" height="80" fill="url(#mobWarm)"/>
+                        <path class="mob-cold" d="M116 146c38-56 88-84 152-84s114 28 152 84Z"/>
+                        <g class="mob-grid">
+                          <ellipse cx="268" cy="238" rx="152" ry="54"/>
+                          <ellipse cx="268" cy="238" rx="152" ry="106"/>
+                          <ellipse cx="268" cy="238" rx="54" ry="152"/>
+                          <ellipse cx="268" cy="238" rx="106" ry="152"/>
+                          <line x1="116" y1="238" x2="420" y2="238"/>
+                          <line x1="268" y1="86" x2="268" y2="390"/>
+                        </g>
+                        <rect x="116" y="86" width="304" height="304" fill="url(#mobShade)"/>
+                        <g class="mob-snow">
+                          <circle cx="238" cy="112" r="1.8"/><circle cx="262" cy="128" r="1.4"/>
+                          <circle cx="292" cy="104" r="1.6"/><circle cx="306" cy="136" r="1.2"/>
+                          <circle cx="250" cy="148" r="1.2"/>
+                        </g>
+                      </g>
+
+                      <g class="mob-arcs">
+                        <path class="mob-arc mob-arc--1" d="M212 344C150 286 150 182 232 118"/>
+                        <path class="mob-arc mob-arc--2" d="M268 344C260 268 264 184 268 118"/>
+                        <path class="mob-arc mob-arc--3" d="M322 342C392 280 374 180 304 118"/>
+                      </g>
+                      <g class="mob-particles">
+                        <circle class="mob-particle mob-particle--a1" r="3.4"/>
+                        <circle class="mob-particle mob-particle--a2" r="2.4"/>
+                        <circle class="mob-particle mob-particle--b1" r="3"/>
+                        <circle class="mob-particle mob-particle--b2" r="2.2"/>
+                        <circle class="mob-particle mob-particle--c1" r="3.4"/>
+                        <circle class="mob-particle mob-particle--c2" r="2.4"/>
+                      </g>
+
+                      <g class="mob-pole" transform="translate(268 108)">
+                        <circle class="mob-pole__glow" r="30"/>
+                        <circle class="mob-pole__ring" r="17"/>
+                        <circle cx="-6" cy="2" r="2.2"/><circle cx="7" cy="-4" r="1.8"/>
+                        <circle cx="4" cy="8" r="1.6"/><circle cx="-9" cy="-7" r="1.4"/>
+                      </g>
+
+                      <g class="mob-origin" transform="translate(212 344)">
+                        <circle class="mob-origin__dot" r="5.5"/>
+                        <circle class="mob-origin__ring" r="12"/>
+                        <g class="mob-heat">
+                          <path d="M-12 20c6-8-6-14 0-24M0 20c6-8-6-14 0-24M12 20c6-8-6-14 0-24"/>
+                        </g>
+                      </g>
+                      <text class="mob-origin__label" x="212" y="382" text-anchor="middle">ORIGEN CÁLIDO</text>
+
+                      <g class="mob-steps">
+                        <g class="mob-step mob-step--1" transform="translate(466 124)">
+                          <rect x="0" y="0" width="132" height="58" rx="9"/>
+                          <g class="mob-thermo" transform="translate(20 14)">
+                            <rect x="0" y="0" width="9" height="28" rx="4.5"/>
+                            <circle cx="4.5" cy="31" r="5.5"/>
+                            <rect class="mob-thermo__fill" x="2.2" y="8" width="4.6" height="22" rx="2.3"/>
+                          </g>
+                          <text class="mob-step__temp" x="46" y="26">20 °C</text>
+                          <text class="mob-step__label" x="46" y="42">SE EVAPORA</text>
+                        </g>
+                        <g class="mob-step mob-step--2" transform="translate(466 214)">
+                          <rect x="0" y="0" width="132" height="58" rx="9"/>
+                          <g class="mob-thermo" transform="translate(20 14)">
+                            <rect x="0" y="0" width="9" height="28" rx="4.5"/>
+                            <circle cx="4.5" cy="31" r="5.5"/>
+                            <rect class="mob-thermo__fill" x="2.2" y="14" width="4.6" height="16" rx="2.3"/>
+                          </g>
+                          <text class="mob-step__temp" x="46" y="26">−5 °C</text>
+                          <text class="mob-step__label" x="46" y="42">CONDENSA</text>
+                        </g>
+                        <g class="mob-step mob-step--3" transform="translate(466 304)">
+                          <rect x="0" y="0" width="132" height="58" rx="9"/>
+                          <g class="mob-thermo" transform="translate(20 14)">
+                            <rect x="0" y="0" width="9" height="28" rx="4.5"/>
+                            <circle cx="4.5" cy="31" r="5.5"/>
+                            <rect class="mob-thermo__fill" x="2.2" y="20" width="4.6" height="10" rx="2.3"/>
+                          </g>
+                          <text class="mob-step__temp" x="46" y="26">−30 °C</text>
+                          <text class="mob-step__label" x="46" y="42">SE DEPOSITA</text>
+                        </g>
+                      </g>
+
+                      <g class="mob-caption" transform="translate(268 444)">
+                        <text class="art-statement" x="0" y="0" text-anchor="middle">DESTILACIÓN GLOBAL</text>
+                        <text class="art-label" x="0" y="20" text-anchor="middle">SALTA DE LO CÁLIDO A LO FRÍO</text>
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+                <div class="trait-panel__copy">
+                  <span class="trait-panel__index">04 / MOVILIDAD</span>
+                  <h3>El problema no se queda quieto.</h3>
+                  <p>Se evapora en climas cálidos, viaja en la atmósfera o en el agua y se condensa en las zonas frías. Puede recorrer miles de kilómetros antes de depositarse.</p>
+                  <dl class="trait-facts"><div><dt>DETECTADO EN</dt><dd>Ártico, Andes, fosas oceánicas y tejidos humanos.</dd></div><div><dt>CONSECUENCIA</dt><dd>Ningún país puede resolverlo solo.</dd></div></dl>
+                </div>
+              </article>
+            </aside>
+
+            <div class="traits-outcome" role="group" aria-label="Las cuatro propiedades actúan juntas: persiste, se acumula, puede dañar y se desplaza; en conjunto crean un problema global.">
+              <span class="traits-outcome__label">ACTÚAN JUNTAS</span>
+              <div class="traits-outcome__formula">
+                <span class="traits-outcome__term is-active" data-trait-summary="persistence">PERSISTE</span>
+                <span class="traits-outcome__plus" aria-hidden="true">+</span>
+                <span class="traits-outcome__term" data-trait-summary="bioaccumulation">SE ACUMULA</span>
+                <span class="traits-outcome__plus" aria-hidden="true">+</span>
+                <span class="traits-outcome__term" data-trait-summary="toxicity">PUEDE DAÑAR</span>
+                <span class="traits-outcome__plus" aria-hidden="true">+</span>
+                <span class="traits-outcome__term" data-trait-summary="mobility">SE DESPLAZA</span>
+              </div>
+              <strong class="traits-outcome__result"><span aria-hidden="true">→</span> PROBLEMA GLOBAL</strong>
+            </div>
+          </div>
+        </div>
+
+        <aside class="notes">
+          <p>¿Por qué los científicos les tienen tanto respeto a estos compuestos? Por cuatro características que se refuerzan entre sí. <em>Pausa entre cada una.</em></p>
+          <p><strong>Uno: persistencia.</strong> Resisten la degradación del sol, del agua y de las bacterias. No desaparecen.</p>
+          <p><strong>Dos: bioacumulación.</strong> Un organismo incorpora COP del ambiente y de los alimentos. Si los incorpora más rápido de lo que los elimina, su carga aumenta y parte puede quedar en el tejido adiposo. Esto ocurre dentro de un organismo; el aumento de concentración entre presas y depredadores se llama biomagnificación, que veremos en la siguiente escena.</p>
+          <p><strong>Tres: toxicidad.</strong> Son venenosos en dosis muy pequeñas. Pueden causar cáncer, problemas reproductivos y daños en el sistema nervioso o inmune.</p>
+          <p><strong>Cuatro: movilidad.</strong> Se evaporan en un país cálido, viajan por el viento o el agua y terminan congelados en el Ártico, contaminando a osos polares que jamás han estado cerca de una fábrica.</p>
+          <p>[La secuencia avanza sola cada 7 segundos. Para detenerte en una característica, haz clic en su tarjeta o pulsa «Pausar».]</p>
+        </aside>
+      </section>
+      <!-- 05 · DOCENA SUCIA -->
+      <section class="slide slide--dirty slide--dark" data-scene="dirty" data-block="03" data-block-title="ORIGEN" data-scene-title="LA DOCENA SUCIA">
+        <div class="slide__inner">
+          <header class="scene-head scene-head--row">
+            <div>
+              <p class="kicker reveal-item">BLOQUE 03 <span class="kicker__sep">/</span> ORIGEN</p>
+              <h2 class="display title--lg reveal-item">LA DOCENA<br><span class="accent">SUCIA.</span></h2>
+            </div>
+            <p class="scene-head__note reveal-item">Doce nombres. Tres formas de llegar al mundo.<br>La primera lista del Convenio de Estocolmo.</p>
+          </header>
+
+          <div class="dirty-grid">
+            <div class="dirty-category-view" id="dirtyCategoryView" aria-labelledby="dirtyCategoryTitle">
+              <div class="dirty-category-view__intro">
+                <div>
+                  <p class="micro-label">12 SUSTANCIAS · 3 GRUPOS</p>
+                  <h3 id="dirtyCategoryTitle">Tres grupos. Doce sustancias.</h3>
+                </div>
+                <p>Selecciona una rama para desplegar sus sustancias.</p>
+              </div>
+
+              <div class="dirty-spider-map" id="dirtySpiderMap" role="group" aria-label="Mapa radial de los doce COP iniciales. Selecciona una rama para explorar sus sustancias.">
+                <svg class="dirty-spider-map__branches" viewBox="0 0 1000 440" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+                  <path class="dirty-spider-map__branch dirty-spider-map__branch--pesticide" d="M420 220 C380 220 335 220 290 220" vector-effect="non-scaling-stroke" />
+                  <path class="dirty-spider-map__branch dirty-spider-map__branch--industrial" d="M565 165 C620 142 651 100 690 100" vector-effect="non-scaling-stroke" />
+                  <path class="dirty-spider-map__branch dirty-spider-map__branch--unintentional" d="M565 275 C620 298 651 340 690 340" vector-effect="non-scaling-stroke" />
+                  <circle class="dirty-spider-map__endpoint dirty-spider-map__endpoint--pesticide" cx="290" cy="220" r="4" />
+                  <circle class="dirty-spider-map__endpoint dirty-spider-map__endpoint--industrial" cx="690" cy="100" r="4" />
+                  <circle class="dirty-spider-map__endpoint dirty-spider-map__endpoint--unintentional" cx="690" cy="340" r="4" />
+                </svg>
+
+                <div class="dirty-spider-hub" aria-hidden="true">
+                  <span class="dirty-spider-hub__eyebrow">CONVENIO DE ESTOCOLMO</span>
+                  <strong>12</strong>
+                  <span class="dirty-spider-hub__label">COP INICIALES</span>
+                </div>
+
+                <button class="dirty-category dirty-category--pesticide" type="button" data-origin-category="pesticide" aria-controls="dirtySubstanceView" aria-expanded="false">
+                  <span class="dirty-category__count">08</span>
+                  <span class="dirty-category__name">Plaguicidas</span>
+                  <span class="dirty-category__description">Ocho sustancias</span>
+                  <span class="dirty-category__action">Ver sustancias <span aria-hidden="true">→</span></span>
+                </button>
+                <button class="dirty-category dirty-category--industrial" type="button" data-origin-category="industrial" aria-controls="dirtySubstanceView" aria-expanded="false">
+                  <span class="dirty-category__count">02</span>
+                  <span class="dirty-category__name">Industriales</span>
+                  <span class="dirty-category__description">Dos sustancias</span>
+                  <span class="dirty-category__action">Ver sustancias <span aria-hidden="true">→</span></span>
+                </button>
+                <button class="dirty-category dirty-category--unintentional" type="button" data-origin-category="accidental" aria-controls="dirtySubstanceView" aria-expanded="false">
+                  <span class="dirty-category__count">02</span>
+                  <span class="dirty-category__name">Subproductos no intencionales</span>
+                  <span class="dirty-category__description">Dioxinas y furanos</span>
+                  <span class="dirty-category__action">Ver sustancias <span aria-hidden="true">→</span></span>
+                </button>
+              </div>
+
+              <div class="dirty-category-view__foot">
+                <p class="dirty-classification-note">La clasificación oficial se solapa: el HCB también fue plaguicida y puede formarse sin intención; los PCBs también pueden producirse sin intención.</p>
+                <p class="dirty-growth-note"><strong>12 iniciales</strong><span aria-hidden="true">→</span> La lista del Convenio creció a más de 30 sustancias.</p>
+              </div>
+            </div>
+
+            <div class="dirty-substance-view" id="dirtySubstanceView" hidden aria-labelledby="dirtyCurrentGroupName">
+              <header class="dirty-group-head">
+                <button class="detail-back" type="button" id="dirtyBackCategories">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Categorías
+                </button>
+                <div>
+                  <p class="micro-label" id="dirtyCurrentGroupCount"></p>
+                  <h3 id="dirtyCurrentGroupName" tabindex="-1"></h3>
+                </div>
+              </header>
+
+              <div class="dirty-explorer-layout">
+                <div class="dirty-substance-choices">
+                  <p class="dirty-substance-choices__prompt" id="dirtySubstancePrompt">Elige una sustancia para consultar su ficha</p>
+                  <ul class="dirty-substance-list" id="dirtySubstanceList" aria-label="Sustancias de la categoría seleccionada" aria-describedby="dirtySubstancePrompt">
+                  <li><button class="dirty-substance" type="button" data-origin="pesticide" data-name="Aldrín" data-alias="Aldrin" aria-controls="dirtySubstanceDetail" aria-pressed="false"><span class="dirty-substance__name">Aldrín</span><span class="dirty-substance__alias">Aldrin</span></button></li>
+                  <li><button class="dirty-substance" type="button" data-origin="pesticide" data-name="Clordano" data-alias="Chlordane" aria-controls="dirtySubstanceDetail" aria-pressed="false"><span class="dirty-substance__name">Clordano</span><span class="dirty-substance__alias">Chlordane</span></button></li>
+                  <li><button class="dirty-substance" type="button" data-origin="pesticide" data-name="DDT" data-alias="Dicloro difenil tricloroetano" aria-controls="dirtySubstanceDetail" aria-pressed="false"><span class="dirty-substance__name">DDT</span><span class="dirty-substance__alias">Dicloro difenil tricloroetano</span></button></li>
+                  <li><button class="dirty-substance" type="button" data-origin="pesticide" data-name="Dieldrín" data-alias="Dieldrin" aria-controls="dirtySubstanceDetail" aria-pressed="false"><span class="dirty-substance__name">Dieldrín</span><span class="dirty-substance__alias">Dieldrin</span></button></li>
+                  <li><button class="dirty-substance" type="button" data-origin="pesticide" data-name="Endrín" data-alias="Endrin" aria-controls="dirtySubstanceDetail" aria-pressed="false"><span class="dirty-substance__name">Endrín</span><span class="dirty-substance__alias">Endrin</span></button></li>
+                  <li><button class="dirty-substance" type="button" data-origin="pesticide" data-name="Heptacloro" data-alias="Heptachlor" aria-controls="dirtySubstanceDetail" aria-pressed="false"><span class="dirty-substance__name">Heptacloro</span><span class="dirty-substance__alias">Heptachlor</span></button></li>
+                  <li><button class="dirty-substance" type="button" data-origin="industrial" data-name="Hexaclorobenceno" data-alias="HCB" aria-controls="dirtySubstanceDetail" aria-pressed="false"><span class="dirty-substance__name">Hexaclorobenceno</span><span class="dirty-substance__alias">HCB</span></button></li>
+                  <li><button class="dirty-substance" type="button" data-origin="pesticide" data-name="Mirex" data-alias="Mirex" aria-controls="dirtySubstanceDetail" aria-pressed="false"><span class="dirty-substance__name">Mirex</span><span class="dirty-substance__alias">Mirex</span></button></li>
+                  <li><button class="dirty-substance" type="button" data-origin="pesticide" data-name="Toxafeno" data-alias="Toxaphene" aria-controls="dirtySubstanceDetail" aria-pressed="false"><span class="dirty-substance__name">Toxafeno</span><span class="dirty-substance__alias">Toxaphene</span></button></li>
+                  <li><button class="dirty-substance" type="button" data-origin="industrial" data-name="PCBs" data-alias="Bifenilos policlorados" aria-controls="dirtySubstanceDetail" aria-pressed="false"><span class="dirty-substance__name">PCBs</span><span class="dirty-substance__alias">Bifenilos policlorados</span></button></li>
+                  <li><button class="dirty-substance" type="button" data-origin="accidental" data-name="Dioxinas" data-alias="PCDD" aria-controls="dirtySubstanceDetail" aria-pressed="false"><span class="dirty-substance__name">Dioxinas</span><span class="dirty-substance__alias">PCDD</span></button></li>
+                  <li><button class="dirty-substance" type="button" data-origin="accidental" data-name="Furanos" data-alias="PCDF" aria-controls="dirtySubstanceDetail" aria-pressed="false"><span class="dirty-substance__name">Furanos</span><span class="dirty-substance__alias">PCDF</span></button></li>
+                  </ul>
+                </div>
+
+                <aside class="dirty-information" aria-label="Información de la categoría o sustancia">
+                  <div class="origin-detail" id="originDetail">
+                    <div class="origin-detail__panel" data-origin-panel="pesticide" hidden>
+                      <div class="origin-detail__visual">
+                        <svg viewBox="0 0 560 150" aria-hidden="true">
+                          <g class="detail-crops"><path d="M40 120h480"/><path d="M70 120V70M120 120V58M170 120V74M220 120V62M270 120V76M320 120V60M370 120V72M420 120V64M470 120V76"/><path d="M64 70c12-12 24-12 36 0M114 58c12-12 24-12 36 0M164 74c12-12 24-12 36 0M214 62c12-12 24-12 36 0M264 76c12-12 24-12 36 0M314 60c12-12 24-12 36 0M364 72c12-12 24-12 36 0M414 64c12-12 24-12 36 0M464 76c12-12 24-12 36 0"/></g>
+                          <g class="detail-drops"><circle cx="150" cy="35" r="5"/><circle cx="300" cy="28" r="4"/><circle cx="440" cy="38" r="5"/></g>
+                        </svg>
+                      </div>
+                      <span class="micro-label">PLAGUICIDAS / 8 SUSTANCIAS</span>
+                      <h3>Rociar era la solución. Persistir fue el problema.</h3>
+                      <ol class="origin-steps" aria-label="Ruta de los plaguicidas en tres pasos">
+                        <li class="origin-step"><span class="origin-step__index" aria-hidden="true">01</span><div><strong class="origin-step__title">USO</strong><p>Se aplicaban para matar insectos en cultivos y viviendas.</p></div></li>
+                        <li class="origin-step"><span class="origin-step__index" aria-hidden="true">02</span><div><strong class="origin-step__title">PERSISTENCIA</strong><p>El DDT fue barato y eficaz, pero muy persistente. Los plaguicidas se acumulan en suelo, agua y grasa animal.</p></div></li>
+                        <li class="origin-step"><span class="origin-step__index" aria-hidden="true">03</span><div><strong class="origin-step__title">LÍMITES Y CONTROL</strong><p>El DDT se restringió a control de malaria bajo lineamientos de la OMS. Metabolitos como DDE pueden ser aún más persistentes.</p></div></li>
+                      </ol>
+                      <button class="text-link" type="button" data-goto="ddt">Ver el caso DDT <span aria-hidden="true">→</span></button>
+                    </div>
+
+                    <div class="origin-detail__panel" data-origin-panel="industrial" hidden>
+                      <div class="origin-detail__visual">
+                        <svg viewBox="0 0 560 150" aria-hidden="true">
+                          <rect x="190" y="20" width="180" height="110" rx="3"/>
+                          <path d="M220 40h120M220 58h120M220 76h120M220 94h120M220 112h120"/>
+                          <path d="M150 45h40M370 45h40M150 105h40M370 105h40"/>
+                          <circle cx="280" cy="75" r="18"/><path d="M280 57v36M262 75h36"/>
+                        </svg>
+                      </div>
+                      <span class="micro-label">INDUSTRIALES / 2 SUSTANCIAS</span>
+                      <h3>PCBs y HCB: dos historias de uso industrial.</h3>
+                      <ol class="origin-steps" aria-label="Ruta de las sustancias industriales en tres pasos">
+                        <li class="origin-step"><span class="origin-step__index" aria-hidden="true">01</span><div><strong class="origin-step__title">USO</strong><p>PCBs: aislantes y refrigerantes en transformadores y capacitores. El HCB también tuvo usos industriales y como plaguicida.</p></div></li>
+                        <li class="origin-step"><span class="origin-step__index" aria-hidden="true">02</span><div><strong class="origin-step__title">LEGADO</strong><p>Los PCBs se prohibieron, pero quedan equipos y residuos antiguos.</p></div></li>
+                        <li class="origin-step"><span class="origin-step__index" aria-hidden="true">03</span><div><strong class="origin-step__title">PRESENCIA Y GESTIÓN</strong><p>Se detectan en tejido graso de animales del Ártico. Los equipos viejos requieren gestión segura.</p></div></li>
+                      </ol>
+                    </div>
+
+                    <div class="origin-detail__panel" data-origin-panel="accidental" hidden>
+                      <div class="origin-detail__visual">
+                        <svg viewBox="0 0 560 150" aria-hidden="true">
+                          <path d="M170 130V40h120v90M170 40h120M200 40V22h60v18M200 130v-38h60v38"/>
+                          <path class="detail-flame" d="M470 128c-18-18-28-30-28-46 0-12 12-22 24-34 2 14 10 20 16 30 6-10 6-20 6-30 12 14 18 26 18 38 0 18-14 32-36 42Z"/>
+                          <path d="M400 128h100"/>
+                        </svg>
+                      </div>
+                      <span class="micro-label">SUBPRODUCTOS NO INTENCIONALES / 2 SUSTANCIAS</span>
+                      <h3>Se forman sin buscarlos: aparecen como subproductos.</h3>
+                      <ol class="origin-steps" aria-label="Ruta de los subproductos no intencionales en tres pasos">
+                        <li class="origin-step"><span class="origin-step__index" aria-hidden="true">01</span><div><strong class="origin-step__title">FORMACIÓN</strong><p>Son subproductos de la combustión incompleta de residuos y de ciertos procesos industriales.</p></div></li>
+                        <li class="origin-step"><span class="origin-step__index" aria-hidden="true">02</span><div><strong class="origin-step__title">FUENTE</strong><p>Quemar basura al aire libre es una fuente importante.</p></div></li>
+                        <li class="origin-step"><span class="origin-step__index" aria-hidden="true">03</span><div><strong class="origin-step__title">REDUCCIÓN</strong><p>No se pueden eliminar del todo; se reducen emisiones. Incineradores modernos controlan temperatura y filtros. Reducir emisiones es su vía principal de control.</p></div></li>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div class="dirty-substance-detail" id="dirtySubstanceDetail" hidden aria-live="polite" aria-labelledby="dirtySubstanceName">
+                    <button class="detail-back" type="button" id="dirtyBackGroup">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Contexto del grupo
+                    </button>
+                    <div class="dirty-art-stage" aria-hidden="true">
+                      <svg class="dirty-substance-art" id="dirtySubstanceArt" viewBox="0 0 520 240" role="presentation">
+                        <ellipse class="dirty-art-orbit dirty-art-orbit--one" id="dirtyArtOrbitOne" cx="260" cy="118" rx="108" ry="42"/>
+                        <ellipse class="dirty-art-orbit dirty-art-orbit--two" id="dirtyArtOrbitTwo" cx="260" cy="118" rx="150" ry="64"/>
+                        <ellipse class="dirty-art-orbit dirty-art-orbit--three" id="dirtyArtOrbitThree" cx="260" cy="118" rx="184" ry="82"/>
+                        <circle class="dirty-art-core" id="dirtyArtCore" cx="260" cy="118" r="46"/>
+                        <circle class="dirty-art-core__inner" cx="260" cy="118" r="9"/>
+                        <g id="dirtyArtParticles"></g>
+                      </svg>
+                    </div>
+                    <p class="dirty-art-caption">RECURSO VISUAL · NO REPRESENTA UNA ESTRUCTURA MOLECULAR</p>
+                    <p class="micro-label">FICHA DE SUSTANCIA</p>
+                    <h3 id="dirtySubstanceName" tabindex="-1"></h3>
+                    <dl class="dirty-substance-meta">
+                      <div><dt>Nombre o sigla en la lista</dt><dd id="dirtySubstanceAlias"></dd></div>
+                      <div><dt>Grupo de esta presentación</dt><dd id="dirtySubstanceCategory"></dd></div>
+                    </dl>
+                    <button class="text-link" id="dirtyDdtLink" type="button" data-goto="ddt" hidden>Ver el caso DDT <span aria-hidden="true">→</span></button>
+                  </div>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="notes">
+          <p>Ustedes se preguntarán: ¿de dónde salen? Históricamente, los hemos creado nosotros. Los más famosos son los doce COP originales, conocidos como la <strong>Docena Sucia</strong>.</p>
+          <p>Hay tres rutas de entrada. <strong>Plaguicidas:</strong> el DDT y otros siete compuestos que se rociaban en cultivos. <strong>Industriales:</strong> los PCBs, usados como aislantes en transformadores, y el HCB. <strong>Accidentales:</strong> las dioxinas y los furanos, que no se fabrican a propósito; se forman al quemar residuos o en ciertos procesos industriales.</p>
+          <p>En la presentación, los doce COP se agrupan en 8 plaguicidas, 2 sustancias industriales y 2 subproductos no intencionales. La clasificación oficial puede solaparse: el HCB también se usó como plaguicida y puede generarse sin intención; los PCBs también pueden producirse sin intención. Fuente: Convenio de Estocolmo, <a href="https://www.pops.int/TheConvention/ThePOPs/The12InitialPOPs/tabid/296/Default.aspx">Los 12 COP iniciales</a>.</p>
+          <p>Para exponer esta sección, primero elijan un grupo y luego una sustancia. La ficha individual muestra los nombres que ya aparecen en la presentación y el grupo asignado aquí; el panel de contexto conserva la explicación original de cada grupo.</p>
+          <p>El DDT es el ejemplo más claro: se usaba masivamente para matar mosquitos y plagas. También se generan de forma accidental; por ejemplo, las dioxinas, que se liberan cuando quemamos basura al aire libre.</p>
+          <p>La docena original no es el final de la historia: el tratado se ha ampliado. Pero esos doce siguen siendo la puerta de entrada para entender el problema.</p>
+        </aside>
+      </section>
+      <!-- 06 · CASO DDT -->
+      <section class="slide slide--ddt slide--dark" data-scene="ddt" data-block="03" data-block-title="ORIGEN" data-scene-title="EL CASO DDT">
+        <div class="slide__inner">
+          <header class="scene-head scene-head--row">
+            <div>
+              <p class="kicker reveal-item">BLOQUE 03 <span class="kicker__sep">/</span> EVIDENCIA</p>
+              <h2 class="display title--lg reveal-item">EL CASO DDT.<br><span class="accent">LA PRUEBA ESTABA EN LA CÁSCARA.</span></h2>
+            </div>
+            <p class="scene-head__note reveal-item">Un pesticida brillante.<br>Una cadena de consecuencias inesperada.</p>
+          </header>
+
+          <div class="ddt-grid">
+            <div class="ddt-left">
+              <div class="egg-stage" id="eggStage">
+                <div class="ddt-readout">
+                  <span class="micro-label">AÑO</span>
+                  <strong id="ddtYear">1947</strong>
+                  <span class="ddt-readout__shell">GROSOR RELATIVO <b id="ddtThickness">100</b></span>
+                </div>
+                <svg class="egg-svg" viewBox="0 0 520 520" role="img" aria-label="Huevo con cáscara que se adelgaza al avanzar el año">
+                  <defs>
+                    <radialGradient id="eggGlow" cx="50%" cy="45%" r="55%">
+                      <stop offset="0" stop-color="#FF7B72" stop-opacity=".18"/>
+                      <stop offset="1" stop-color="#FF7B72" stop-opacity="0"/>
+                    </radialGradient>
+                  </defs>
+                  <circle cx="260" cy="270" r="235" fill="url(#eggGlow)"/>
+                  <path class="egg-shell" d="M260 55c92 0 158 93 158 220 0 116-68 190-158 190S102 391 102 275C102 148 168 55 260 55Z"/>
+                  <path class="egg-inner" d="M260 82c76 0 130 80 130 193 0 101-55 163-130 163S130 376 130 275C130 162 184 82 260 82Z"/>
+                  <ellipse class="egg-yolk" cx="260" cy="310" rx="72" ry="64"/>
+                  <path class="egg-highlight" d="M190 180c-18 32-26 70-26 112"/>
+                  <g class="egg-cracks">
+                    <path d="M170 160l30 38-22 26 42 34-18 30"/>
+                    <path d="M350 250l-28 34 22 28-34 30"/>
+                    <path d="M220 420l26-30-18-24 32-26"/>
+                  </g>
+                </svg>
+                <div class="egg-caption">Modelo didáctico · tendencia documentada</div>
+                <figure class="egg-macro" id="eggMacro" aria-label="Acercamiento ilustrativo del adelgazamiento y la fractura de la cáscara">
+                  <figcaption class="egg-macro__head"><span>PLANO MACRO · CÁSCARA</span><span>ACERCAMIENTO</span></figcaption>
+                  <svg class="egg-macro__svg" viewBox="0 0 340 200" aria-hidden="true" focusable="false">
+                    <defs>
+                      <linearGradient id="eggMacroShellGradient" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#F8FAFF" />
+                        <stop offset="1" stop-color="#AABBD3" />
+                      </linearGradient>
+                      <linearGradient id="eggMacroInteriorGradient" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#173D76" />
+                        <stop offset="1" stop-color="#0A1B39" />
+                      </linearGradient>
+                    </defs>
+                    <rect class="egg-macro__backdrop" x="1" y="1" width="338" height="198" rx="9" />
+                    <path class="egg-macro__interior" d="M1 105c48-24 87-25 132-8s88 12 124-4 59-16 82-8v114H1Z" />
+                    <path class="egg-macro__shell" id="eggMacroShell" d="M18 92c49-25 86-25 132-8s88 12 124-4 47-15 66-9" />
+                    <path class="egg-macro__membrane" d="M18 108c49-24 86-24 132-7s88 12 124-4 47-15 66-9" />
+                    <path class="egg-macro__surface-smooth" d="M18 80c49-25 86-25 132-8s88 12 124-4 47-15 66-9" />
+                    <g class="egg-macro__rough" id="eggMacroRough">
+                      <path d="M18 80 30 73 38 82 48 69 59 77 67 66 78 75 88 63 100 72 110 67 122 79 134 69 145 83 157 76 168 89 181 81 194 76 207 84 219 70 232 80 244 67 257 76 270 64 284 78 299 69 313 80 340 71" />
+                      <path d="m47 77 3 8m45-12 4 8m52-2 5 8m49-7 3 9m47-15 4 10m43-10 4 9" />
+                    </g>
+                    <g class="egg-macro__fractures" id="eggMacroFractures">
+                      <path d="m244 69-10 15 8 12-12 15 8 13-10 17" />
+                      <path d="m244 96 14 5-2 12 14 6" />
+                    </g>
+                  </svg>
+                  <div class="egg-macro__readout"><span>ESPESOR RELATIVO</span><strong id="eggMacroThickness">100</strong></div>
+                  <p class="egg-macro__note">Textura ilustrativa · efecto documentado: adelgazamiento</p>
+                </figure>
+              </div>
+
+              <div class="year-control">
+                <label for="ddtRange">AÑO <span id="ddtRangeLabel">1947</span></label>
+                <input id="ddtRange" type="range" min="1947" max="1972" value="1947" step="1" aria-label="Año del caso DDT">
+                <button class="btn btn--ghost btn--tiny" type="button" id="ddtPlay">Reproducir 1947 → 1972</button>
+              </div>
+              <p class="fineprint">El grosor se muestra como índice relativo. El adelgazamiento de cáscaras por DDE está documentado en aves rapaces; las cifras exactas varían por especie y exposición.</p>
+            </div>
+
+            <div class="ddt-right">
+              <p class="ddt-quote">«La evidencia no estaba en un laboratorio. Estaba en las cáscaras que no llegaban a romperse.»</p>
+              <div class="chain" aria-label="Cadena causal del DDT">
+                <div class="chain-step"><span class="chain-step__num">01</span><p><strong>DDT se rocía</strong> en cultivos y viviendas para matar insectos.</p></div>
+                <div class="chain-step"><span class="chain-step__num">02</span><p>Se degrada a <strong>DDE</strong>, un metabolito aún más persistente.</p></div>
+                <div class="chain-step"><span class="chain-step__num">03</span><p>El DDE interfiere con el <strong>transporte de calcio</strong> hacia la cáscara del huevo.</p></div>
+                <div class="chain-step"><span class="chain-step__num">04</span><p>La cáscara se adelgaza y se rompe antes de tiempo. <strong>Menos crías.</strong></p></div>
+              </div>
+              <div class="nuance">
+                <span class="micro-label">MATIZ CIENTÍFICO</span>
+                <p>El DDT no está prohibido en todos los usos. El Convenio permite su uso limitado para <strong>control de malaria</strong> bajo lineamientos de la OMS. El problema no es un veneno mágico: es el uso masivo, persistente y acumulativo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="notes">
+          <p>El DDT es el ejemplo más famoso de la Docena Sucia. Se usó masivamente en agricultura y para controlar mosquitos. Era barato, eficaz y parecía la solución perfecta.</p>
+          <p>Pero el DDT se degrada a <strong>DDE</strong>, que es aún más persistente. El DDE interfiere con una enzima que transporta calcio hacia la glándula de la cáscara. Resultado: cáscaras más finas, que se rompen antes de que el polluelo nazca. [Arrastra el año o pulsa «Reproducir».]</p>
+          <p>Las poblaciones de halcones peregrinos, águilas calvas y pelícanos cayeron. No fue magia: fue química en la cadena alimenticia. En 1972, Estados Unidos prohibió el uso agrícola del DDT.</p>
+          <p><strong>Matiz importante:</strong> el Convenio de Estocolmo no prohíbe todo el DDT. Permite su uso limitado para control de malaria, bajo lineamientos de la OMS, porque en algunos lugares sigue siendo una herramienta de salud pública. La ciencia no es blanco o negro: es contexto, dosis y evidencia.</p>
+        </aside>
+      </section>
+
+      <!-- 07 · BIOMAGNIFICACIÓN -->
+      <section class="slide slide--biomag slide--dark" data-scene="biomag" data-block="04" data-block-title="SIMULADOR" data-scene-title="LA CIMA PAGA LA CUENTA">
+        <div class="slide__inner">
+          <header class="bio-header">
+            <div>
+              <p class="kicker reveal-item">BLOQUE 04 <span class="kicker__sep">/</span> EXPERIENCIA PRINCIPAL</p>
+              <h2 class="display title--lg reveal-item">LA CIMA PAGA<br><span class="accent">LA CUENTA.</span></h2>
+            </div>
+            <p class="bio-header__note reveal-item">La concentración puede aumentar<br>al pasar de presa a depredador.</p>
+          </header>
+
+          <div class="bio-grid">
+            <div class="pyramid" id="pyramid" aria-label="Pirámide trófica interactiva: agua, plancton, pez pequeño, atún y humano">
+              <div class="pyramid__stack">
+                <div class="tier tier--human" data-tier="4" role="button" tabindex="0" aria-pressed="false" style="--w: 28%; --cut: 25%; --pad: 8px">
+                  <span class="tier__id">05</span>
+                  <span class="tier__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="12" r="7"/><path d="M11 43c0-12 5-19 13-19s13 7 13 19"/><path d="M17 43V31M31 43V31"/></svg></span>
+                  <span class="tier__label"><strong>HUMANO</strong><small>depredador ápice · 10.000×</small></span>
+                  <span class="tier__field" data-field="4"></span>
+                </div>
+                <div class="tier" data-tier="3" role="button" tabindex="0" aria-pressed="false" style="--w: 42%; --cut: 16.667%; --pad: 74px">
+                  <span class="tier__id">04</span>
+                  <span class="tier__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M6 24c8-8 20-9 30-3l7-5 2 8-2 8-7-5c-10 6-22 5-30-3Z"/><path d="M15 19v10"/><circle cx="12" cy="21" r="1.5"/></svg></span>
+                  <span class="tier__label"><strong>ATÚN</strong><small>depredador · 1.000×</small></span>
+                  <span class="tier__field" data-field="3"></span>
+                </div>
+                <div class="tier" data-tier="2" role="button" tabindex="0" aria-pressed="false" style="--w: 56%; --cut: 12.5%; --pad: 70px">
+                  <span class="tier__id">03</span>
+                  <span class="tier__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M7 24c7-7 17-8 25-3l7-4v14l-7-4c-8 5-18 4-25-3Z"/><circle cx="13" cy="21" r="1.5"/><path d="M22 18v12"/></svg></span>
+                  <span class="tier__label"><strong>PEZ PEQUEÑO</strong><small>consumidor · 100×</small></span>
+                  <span class="tier__field" data-field="2"></span>
+                </div>
+                <div class="tier" data-tier="1" role="button" tabindex="0" aria-pressed="false" style="--w: 70%; --cut: 10%; --pad: 70px">
+                  <span class="tier__id">02</span>
+                  <span class="tier__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="18" cy="20" r="5"/><circle cx="30" cy="16" r="4"/><circle cx="26" cy="30" r="6"/><circle cx="13" cy="32" r="3"/><circle cx="38" cy="27" r="3"/><path d="M18 25v7M30 20v6M26 24v4"/></svg></span>
+                  <span class="tier__label"><strong>PLANCTON</strong><small>productor · 10×</small></span>
+                  <span class="tier__field" data-field="1"></span>
+                </div>
+                <div class="tier is-active" data-tier="0" role="button" tabindex="0" aria-pressed="true" style="--w: 84%; --cut: 8.333%; --pad: 70px">
+                  <span class="tier__id">01</span>
+                  <span class="tier__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M5 18c5-5 8-5 13 0s8 5 13 0 8-5 13 0M5 28c5-5 8-5 13 0s8 5 13 0 8-5 13 0M5 38c5-5 8-5 13 0s8 5 13 0 8-5 13 0"/></svg></span>
+                  <span class="tier__label"><strong>AGUA</strong><small>punto de partida · 1×</small></span>
+                  <span class="tier__field" data-field="0"></span>
+                </div>
+                <div class="pyramid__spine" aria-hidden="true"></div>
+                <svg class="pyramid__outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                  <polygon points="50,0 57,16.667 92,100 8,100 43,16.667"></polygon>
+                </svg>
+              </div>
+            </div>
+
+            <aside class="bio-panel">
+              <p class="micro-label">SIMULADOR DE BIOMAGNIFICACIÓN</p>
+              <div class="bio-level">
+                <span id="bioLevelNum">01</span>
+                <div><span class="bio-level__of">NIVEL 1 / 5</span><h3 id="bioLevelName">AGUA</h3></div>
+              </div>
+
+              <div class="bio-factor">
+                <span id="bioFactor">1×</span>
+                <small>factor relativo al agua</small>
+              </div>
+
+              <div class="log-scale" aria-hidden="true">
+                <span class="log-track"></span>
+                <span class="log-marker" id="bioMarker"></span>
+                <span class="log-min">1×</span><span class="log-max">10.000×</span>
+              </div>
+
+              <p class="bio-copy" id="bioCopy">El COP llega al agua en concentraciones mínimas. Tan bajas que los instrumentos apenas las detectan.</p>
+
+              <div class="bio-stats">
+                <div><span class="bio-stats__num" id="bioParticles">4</span><span class="bio-stats__label">partículas visibles</span></div>
+                <div><span class="bio-stats__num" id="bioDose">1×</span><span class="bio-stats__label">dosis relativa</span></div>
+              </div>
+
+              <div class="bio-controls">
+                <button class="btn btn--ghost btn--small" type="button" id="bioPrev" disabled>← Anterior</button>
+                <button class="btn btn--primary btn--small" type="button" id="bioNext">Siguiente nivel →</button>
+              </div>
+              <div class="bio-controls bio-controls--sub">
+                <button class="text-link" type="button" id="bioAuto">Reproducir automáticamente</button>
+                <button class="text-link text-link--muted" type="button" id="bioReset">Reiniciar</button>
+              </div>
+              <p class="fineprint">Factores ilustrativos para explicar el concepto. En la naturaleza varían según el compuesto, la especie y el ecosistema.</p>
+            </aside>
+          </div>
+
+          <div class="bio-banner" id="bioBanner" aria-live="polite">
+            <span class="bio-banner__label">DISTINCIÓN</span>
+            <p><strong>Bioacumulación:</strong> aumento dentro de un organismo. <strong>Biomagnificación:</strong> aumento de concentración entre niveles tróficos.</p>
+          </div>
+        </div>
+
+        <aside class="notes">
+          <p>Este es el corazón de la exposición. Vamos a seguir una molécula de COP desde el agua hasta el depredador ápice.</p>
+          <p><strong>Nivel uno: el agua.</strong> La concentración es mínima. Tan baja que casi no se detecta. [Pulsa «Siguiente nivel».]</p>
+          <p><strong>Nivel dos: el plancton.</strong> Incorpora COP del agua; si lo retiene, aumenta su carga corporal. En este modelo didáctico, el factor del nivel es 10×. <em>Pausa.</em></p>
+          <p><strong>Nivel tres: el pez pequeño.</strong> Come plancton contaminado. Si la concentración en su tejido supera la de sus presas, el modelo muestra biomagnificación en ese paso.</p>
+          <p><strong>Nivel cuatro: el atún.</strong> Es un depredador longevo y come peces pequeños. Si la concentración aumenta entre estos niveles, eso representa biomagnificación; el valor real depende del compuesto y del ecosistema.</p>
+          <p><strong>Nivel cinco: nosotros.</strong> También podemos exponernos al consumir organismos contaminados. La concentración no aumenta siempre ni por igual: depende del compuesto, las especies y la red alimentaria.</p>
+          <p><strong>Distinción:</strong> la bioacumulación ocurre dentro de un organismo; la biomagnificación describe el aumento de concentración entre niveles tróficos. Los factores de esta escena son ilustrativos y varían según el compuesto, la especie y el ecosistema. Fuente: <a href="https://www.epa.gov/salish-sea/toxics-food-web">EPA, Toxics in the Food Web</a>.</p>
+        </aside>
+      </section>
+      <!-- 08 · CONVENIO DE ESTOCOLMO -->
+      <section class="slide slide--treaty slide--dark" data-scene="treaty" data-block="05" data-block-title="RESPUESTA" data-scene-title="EL MUNDO DIJO BASTA">
+        <div class="slide__inner">
+          <header class="scene-head scene-head--row">
+            <div>
+              <p class="kicker reveal-item">BLOQUE 05 <span class="kicker__sep">/</span> RESPUESTA</p>
+              <h2 class="display title--lg reveal-item">EL MUNDO<br><span class="accent">DIJO BASTA.</span></h2>
+            </div>
+            <p class="scene-head__note reveal-item">Un problema que no respeta fronteras<br>necesita una respuesta que tampoco.</p>
+          </header>
+
+          <div class="treaty-grid">
+            <div class="treaty-left">
+              <div class="treaty-map-panel">
+                <div class="treaty-map">
+                  <canvas id="treatyGlobeCanvas" class="treaty-globe-canvas" role="img" aria-label="Globo terráqueo giratorio. Los puntos muestran las partes del Convenio de Estocolmo y las cruces los países que no forman parte."></canvas>
+                  <img class="world-map treaty-map__texture-source" src="assets/world-map.svg" alt="" aria-hidden="true">
+                  <img class="ratify-overlay treaty-map__texture-source" src="assets/ratify-dots.svg?v=20261030-treaty-globe-v1" alt="" aria-hidden="true">
+                  <div class="treaty-map__badge">
+                    <strong>186</strong>
+                    <span>PARTES</span>
+                  </div>
+                </div>
+                <div class="treaty-map__legend">
+                  <span><i class="dot dot--teal"></i> PAÍS PARTE</span>
+                  <span><i class="dot dot--cross">×</i> NO PARTE</span>
+                  <span class="treaty-map__source">185 Estados + Unión Europea</span>
+                </div>
+              </div>
+
+              <div class="milestones__intro">
+                <p class="micro-label milestones__eyebrow">DE 12 SUSTANCIAS A MÁS DE 30</p>
+                <p class="milestones__guide">Así evolucionó la respuesta internacional:</p>
+              </div>
+              <ol class="milestones milestones--timeline" aria-label="Cuatro pasos: adopción del tratado en 2001, entrada en vigor en 2004, ampliación en 2009 y alcance actual">
+                <li class="reveal-item">
+                  <div class="milestone__top"><span class="milestone__step">01</span><time class="milestone__date" datetime="2001">2001</time><span class="milestone__type">ACUERDO</span></div>
+                  <strong class="milestone__title">Nace el Convenio</strong>
+                  <p>La Docena Sucia forma su lista inicial.</p>
+                </li>
+                <li class="reveal-item">
+                  <div class="milestone__top"><span class="milestone__step">02</span><time class="milestone__date" datetime="2004">2004</time><span class="milestone__type">OBLIGACIONES</span></div>
+                  <strong class="milestone__title">Empieza a aplicarse</strong>
+                  <p>Las Partes deben prohibir o restringir los COP incluidos.</p>
+                </li>
+                <li class="reveal-item">
+                  <div class="milestone__top"><span class="milestone__step">03</span><time class="milestone__date" datetime="2009">2009</time><span class="milestone__type">AMPLIACIÓN</span></div>
+                  <strong class="milestone__title">Crece la lista</strong>
+                  <p>Se incorporan los PFOS y sus derivados.</p>
+                </li>
+                <li class="reveal-item">
+                  <div class="milestone__top"><span class="milestone__step">04</span><span class="milestone__date">HOY</span><span class="milestone__type">ALCANCE ACTUAL</span></div>
+                  <strong class="milestone__title">Más de 30 sustancias</strong>
+                  <p>El Convenio establece medidas de eliminación, restricción o reducción de emisiones.</p>
+                </li>
+              </ol>
+            </div>
+
+            <aside class="treaty-side">
+              <div class="actions">
+                <p class="micro-label">DECISIONES LOCALES · EFECTO GLOBAL</p>
+                <h3>Interrumpe la ruta<br>desde su origen.</h3>
+                <p class="actions__guide">Selecciona una fuente para ver qué hacer y por qué.</p>
+                <div class="action-explorer" id="actionExplorer">
+                  <div class="action-nodes" role="group" aria-label="Fuentes de contaminación; selecciona una para explorar su acción">
+                    <button class="action-node action-node--burn is-active" type="button" data-action-route="burn" data-source="Quema al aire libre" data-recommendation="No quemes basura al aire libre." data-effect="La quema incompleta forma dioxinas y furanos." data-steps="Separa plásticos, pilas y envases antes de deshacerte de la basura.|Entrega los residuos al servicio de recolección, nunca al fuego.|Reporta las quemas de basura en patios y lotes." aria-pressed="true" aria-controls="actionDetail">
+                      <span class="action-node__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M25.8 5.5c1.2 7.1-2.2 9.3-5.1 13.2-2.1 2.8-2.6 5.4-1.5 8.1 1-2.2 2.8-3.8 5.2-5.5-.4 4.7 4.9 6.2 4.9 11.5 0 4.8-3.4 8.1-8 8.1-5.4 0-9.1-4.1-9.1-9.6 0-4.9 2.7-9.4 6-13.1M29 18.6c5.8 4.1 9.2 9.3 9.2 14.4 0 6.8-5.2 11.2-12.5 11.2-2.1 0-4-.4-5.7-1.1"/></svg></span>
+                      <span class="action-node__label">QUEMA</span><span class="action-node__number">01</span>
+                      <span class="action-node__hint">AL AIRE LIBRE</span>
+                    </button>
+                    <button class="action-node action-node--ewaste" type="button" data-action-route="ewaste" data-source="Residuos electrónicos" data-recommendation="Recíclalos correctamente." data-effect="Evita liberar metales y compuestos tóxicos." data-steps="Guarda cables, pilas y equipos viejos en una caja, no en la basura común.|Llévalos a un punto de acopio de residuos electrónicos.|Borra tus datos y retira la batería antes de entregarlos." aria-pressed="false" aria-controls="actionDetail">
+                      <span class="action-node__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="8" y="9" width="32" height="23" rx="3"/><path d="M4.5 38h39l-4-6h-31zM18 15h12M18 21h8M24 3l4 4-4 4M41 19l4 4-4 4"/></svg></span>
+                      <span class="action-node__label">ELECTRÓNICOS</span><span class="action-node__number">02</span>
+                      <span class="action-node__hint">RESIDUOS</span>
+                    </button>
+                    <button class="action-node action-node--food" type="button" data-action-route="food" data-source="Consumo de alimentos" data-recommendation="Prefiere alimentos sin plaguicidas persistentes." data-effect="Menos demanda, menos liberación." data-steps="Lava y pela frutas y verduras antes de comerlas.|Elige alimentos de agricultura sin plaguicidas persistentes.|Varía tu dieta: menos monocultivo, menos exposición." aria-pressed="false" aria-controls="actionDetail">
+                      <span class="action-node__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M39.5 8.5C25 8 13.6 13.6 10.8 24.2c-1.6 6.1 2.2 11.6 8.1 12.2 11.8 1.3 21.1-13.3 20.6-27.9Z"/><path d="M9 42c5.2-11.6 13.1-18.2 24.9-25.6M18.1 33.4l-.8-8.2M25 26.5l8.2.3"/></svg></span>
+                      <span class="action-node__label">ALIMENTOS</span><span class="action-node__number">03</span>
+                      <span class="action-node__hint">CONSUMO</span>
+                    </button>
+                    <button class="action-node action-node--equipment" type="button" data-action-route="oil" data-source="Aceites y transformadores" data-recommendation="Gestiona aceites y transformadores adecuadamente." data-effect="Los PCBs siguen en equipos antiguos." data-steps="No viertas aceite usado por el desagüe ni en el suelo.|Entrega transformadores y aceites viejos a un gestor autorizado.|Pide mantenimiento y registro de los equipos con PCB." aria-pressed="false" aria-controls="actionDetail">
+                      <span class="action-node__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="8" y="12" width="32" height="27" rx="4"/><path d="M16 12V7m16 5V7M14 19h20M17 27h4l3-5 4 10 3-5h3M18 43h12"/></svg></span>
+                      <span class="action-node__label">EQUIPOS</span><span class="action-node__number">04</span>
+                      <span class="action-node__hint">ACEITES · PCBs</span>
+                    </button>
+                  </div>
+                  <div class="action-detail" id="actionDetail" aria-live="polite" aria-atomic="true">
+                    <div class="action-detail__route"><span id="actionDetailStep">RUTA 01 / 04</span><span class="action-detail__arrow" aria-hidden="true">→</span><strong id="actionDetailSource">Quema al aire libre</strong></div>
+                    <div class="action-detail__decision"><span>ACCIÓN</span><strong id="actionDetailRecommendation">No quemes basura al aire libre.</strong></div>
+                    <p class="action-detail__effect"><span>POR QUÉ IMPORTA</span><span id="actionDetailEffect">La quema incompleta forma dioxinas y furanos.</span></p>
+                    <div class="action-detail__steps" id="actionDetailSteps">
+                      <p class="action-detail__steps-title"><span>CÓMO HACERLO</span><span>3 PASOS</span></p>
+                      <ol>
+                        <li><span>01</span><p>Separa plásticos, pilas y envases antes de deshacerte de la basura.</p></li>
+                        <li><span>02</span><p>Entrega los residuos al servicio de recolección, nunca al fuego.</p></li>
+                        <li><span>03</span><p>Reporta las quemas de basura en patios y lotes.</p></li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+
+        <aside class="notes">
+          <p>Afortunadamente, el mundo se dio cuenta. En el año <strong>2001</strong> se firmó un tratado internacional: el <strong>Convenio de Estocolmo</strong>. Entró en vigor en 2004.</p>
+          <p>Hoy tiene <strong>186 partes</strong>: 185 Estados más la Unión Europea. Los países se comprometieron a prohibir o restringir severamente los COP. Empezaron con doce; hoy la lista supera las treinta sustancias.</p>
+          <p>[Señala el mapa.] Los puntos son los países que forman parte. Las cruces son los que no; entre ellos, Estados Unidos, Israel y Malasia. Una crítica frecuente es que el tratado no obliga a financiar soluciones en todos los casos, y que algunos países quedan fuera.</p>
+          <p>¿Qué podemos hacer nosotros, si son problemas tan grandes? [Explora las cuatro fuentes y relaciona cada una con una acción.] No quemar basura. Reciclar electrónicos. Apoyar agricultura sin pesticidas tóxicos. Gestionar bien aceites y transformadores.</p>
+          <p>Parece pequeño frente a un tratado global, pero las emisiones se reducen sumando decisiones locales.</p>
+        </aside>
+      </section>
+
+      <!-- 09 · CIERRE -->
+      <section class="slide slide--close slide--dark" data-scene="close" data-block="05" data-block-title="RESPUESTA" data-scene-title="LO QUE VUELVE">
+        <div class="close-glow" aria-hidden="true"></div>
+        <div class="slide__inner close-inner">
+          <div class="close-copy">
+            <p class="kicker reveal-item">BLOQUE 05 <span class="kicker__sep">/</span> RESPUESTA</p>
+            <p class="close-quote reveal-item">Lo que lanzamos a la naturaleza<br><span>nunca desaparece por arte de magia.</span></p>
+            <h2 class="display title--close reveal-item">TARDE O TEMPRANO,<br><span class="accent">VUELVE A NOSOTROS.</span></h2>
+            <p class="close-note reveal-item">El viajero invisible sigue en movimiento. La pregunta ya no es si nos alcanza, sino <strong>qué hacemos mientras viaja.</strong></p>
+
+            <div class="close-actions reveal-item">
+              <button class="btn btn--primary" type="button" id="restartBtn">
+                <span>Volver al inicio</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v6h6M20 20v-6h-6"/><path d="M20 9A8 8 0 0 0 6 6L4 10M4 15a8 8 0 0 0 14 3l2-4"/></svg>
+              </button>
+              <div class="close-resource-actions" role="group" aria-label="Recursos para seguir aprendiendo">
+                <a class="btn btn--primary btn--small close-resource-btn" href="https://quimicos.minambiente.gov.co/cop/" target="_self">
+                  <span>Recursos educativos</span><span class="close-resource-btn__arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="btn btn--primary btn--small close-resource-btn" href="https://chm.pops.int/Portals/0/download.aspx?e=UNEP-POPS-COP-CONVTEXT-2023.Spanish.pdf" target="_self">
+                  <span>Normativa del Convenio</span><span class="close-resource-btn__arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+              <span class="close-thanks">GRACIAS <span>·</span> ¿PREGUNTAS?</span>
+            </div>
+
+            <div class="close-sources reveal-item">
+              <span class="micro-label">FUENTES</span>
+              <p>PNUMA · Convenio de Estocolmo · OMS · US EPA · AMAP</p>
+            </div>
+          </div>
+
+          <div class="close-sample reveal-item" aria-label="Muestra ártica con contaminantes detectados">
+            <svg class="sample-svg" viewBox="0 0 560 560" aria-hidden="true">
+              <defs>
+                <radialGradient id="sampleGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0" stop-color="#6FB1F2" stop-opacity=".14"/>
+                  <stop offset=".7" stop-color="#6FB1F2" stop-opacity=".03"/>
+                  <stop offset="1" stop-color="#6FB1F2" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <circle cx="280" cy="280" r="264" fill="url(#sampleGlow)"/>
+              <circle class="sample-ring sample-ring--outer" cx="280" cy="280" r="250"/>
+              <circle class="sample-ring" cx="280" cy="280" r="206"/>
+              <circle class="sample-ring sample-ring--dash" cx="280" cy="280" r="160"/>
+              <g class="sample-ticks">
+                <path d="M280 30v18M280 512v18M30 280h18M512 280h18M103 103l13 13M457 457l-13-13M457 103l-13 13M103 457l13-13"/>
+              </g>
+              <g class="paw" transform="translate(280 300)">
+                <path class="paw__pad" d="M0-8c-54 0-86 34-86 66 0 28 22 47 50 51 16 2 24 11 36 11s20-9 36-11c28-4 50-23 50-51 0-32-32-66-86-66Z"/>
+                <ellipse class="paw__toe" cx="-78" cy="-66" rx="24" ry="30" transform="rotate(-24 -78 -66)"/>
+                <ellipse class="paw__toe" cx="-32" cy="-96" rx="24" ry="32"/>
+                <ellipse class="paw__toe" cx="28" cy="-96" rx="24" ry="32"/>
+                <ellipse class="paw__toe" cx="75" cy="-64" rx="24" ry="30" transform="rotate(24 75 -64)"/>
+              </g>
+              <g class="sample-particles" id="closeParticles"></g>
+              <text x="280" y="452" text-anchor="middle" class="sample-coord">78° N · 40° O</text>
+              <text x="280" y="482" text-anchor="middle" class="sample-label">MUESTRA DE TEJIDO · ÁRTICO</text>
+            </svg>
+
+            <div class="sample-readouts">
+              <div><span>DDE</span><b>DETECTADO</b></div>
+              <div><span>PCB-153</span><b>DETECTADO</b></div>
+              <div><span>HCB</span><b>DETECTADO</b></div>
+            </div>
+            <p class="sample-caption">Ninguno se fabricó en el Ártico.<br>Todos llegaron por aire y agua.</p>
+          </div>
+        </div>
+
+        <aside class="notes">
+          <p>Los COP nos enseñan algo incómodo: <strong>lo que lanzamos a la naturaleza nunca desaparece por arte de magia</strong>. Viaja, se acumula y, tarde o temprano, vuelve a nosotros.</p>
+          <p>Empezamos con una pregunta: ¿cómo llega un químico de una fábrica de América a la sangre de un oso polar? Ahora la respuesta está completa: por el aire y el agua, en la grasa de los animales, y por la cadena alimenticia. <em>Pausa.</em></p>
+          <p>Pero también hay agencia. El Convenio de Estocolmo demuestra que el mundo puede coordinarse. Y las acciones locales —no quemar basura, reciclar electrónicos, cuidar los aceites— reducen la próxima liberación.</p>
+          <p>Cierren con la frase: <strong>«Tarde o temprano, vuelve a nosotros».</strong> Y pregunten: ¿qué acción pueden empezar esta semana?</p>
+          <p>«Muchas gracias. Si tienen alguna pregunta, con gusto intentaré responderla.»</p>
+        </aside>
+      </section>
+    </div>
+  </div>
+
+  <div class="solar-transition" id="solarTransition" aria-hidden="true">
+    <div class="solar-transition__space"></div>
+    <svg class="solar-transition__streaks" viewBox="0 0 1000 600" preserveAspectRatio="none">
+      <path d="M500 300L24 48M500 300L960 74M500 300L0 530M500 300L1000 564M500 300L280 0M500 300L748 600"/>
+    </svg>
+    <svg class="solar-transition__debris" viewBox="0 0 1000 600" preserveAspectRatio="none">
+      <g class="debris-piece debris-piece--one" transform="translate(190 365) rotate(24)"><path d="M-9-2h18v4h-18zM-4-8v16M9-5l7-3M9 5l7 3"/></g>
+      <g class="debris-piece debris-piece--two" transform="translate(790 205) rotate(-18)"><path d="M-7-3h14v6h-14zM-2-9v18M7 0h8"/></g>
+    </svg>
+    <div class="solar-transition__earth-transform" id="solarTransitionEarthWrap">
+      <div class="solar-transition__earth" id="solarTransitionEarth">
+        <span></span>
+      </div>
+    </div>
+    <div class="solar-transition__clouds">
+      <span class="cloud-layer cloud-layer--one"></span>
+    </div>
+  </div>
+
+  <footer class="hud hud--bottom">
+    <div class="progress">
+      <div class="progress__track"><div class="progress__fill" id="progressFill"></div></div>
+      <div class="progress__labels">
+        <span>01 APERTURA</span><span>02 CARACTERÍSTICAS</span><span>03 ORIGEN</span><span>04 SIMULADOR</span><span>05 RESPUESTA</span>
+      </div>
+    </div>
+    <div class="hud__nav">
+      <span class="slide-counter"><span id="slideCurrent">01</span> <span class="slide-counter__sep">/</span> <span id="slideTotal">09</span></span>
+      <button class="nav-btn" type="button" id="prevSlide" aria-label="Escena anterior">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="nav-btn" type="button" id="nextSlide" aria-label="Escena siguiente">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </footer>
+
+  <aside class="notes-panel" id="notesPanel" aria-hidden="true" aria-label="Guion del expositor">
+    <div class="notes-panel__head">
+      <div>
+        <p class="micro-label">GUION DEL EXPOSITOR</p>
+        <h2 id="notesTitle">EL VIAJERO INVISIBLE</h2>
+      </div>
+      <button class="icon-btn" type="button" id="notesClose" aria-label="Cerrar guion">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="notes-panel__body" id="notesBody"></div>
+    <div class="notes-panel__foot"><kbd>S</kbd> cerrar · <kbd>Esc</kbd> salir</div>
+  </aside>
+
+  <div class="map-modal" id="mapModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="mapModalTitle">
+    <div class="map-modal__panel">
+      <div class="map-modal__head">
+        <div>
+          <p class="micro-label">ARQUITECTURA DE LA EXPERIENCIA</p>
+          <h2 id="mapModalTitle">MAPA DE ESCENAS</h2>
+        </div>
+        <button class="icon-btn" type="button" id="mapClose" aria-label="Cerrar mapa de escenas">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+      <div class="map-modal__grid">
+        <button class="map-block" type="button" data-slide="0">
+          <span class="map-block__num">01</span>
+          <span class="map-block__body"><strong>EL VIAJERO INVISIBLE</strong><small>Hero + mapa de corrientes · 3 min</small></span>
+          <span class="map-block__scenes">Escenas 01–02</span>
+        </button>
+        <button class="map-block" type="button" data-slide="2">
+          <span class="map-block__num">02</span>
+          <span class="map-block__body"><strong>LAS CUATRO LETALES</strong><small>Definición + tarjetas interactivas · 4 min</small></span>
+          <span class="map-block__scenes">Escenas 03–04</span>
+        </button>
+        <button class="map-block" type="button" data-slide="4">
+          <span class="map-block__num">03</span>
+          <span class="map-block__body"><strong>LA DOCENA SUCIA</strong><small>Orígenes + evidencia DDT · 4 min</small></span>
+          <span class="map-block__scenes">Escenas 05–06</span>
+        </button>
+        <button class="map-block" type="button" data-slide="6">
+          <span class="map-block__num">04</span>
+          <span class="map-block__body"><strong>BIOMAGNIFICACIÓN</strong><small>Simulador de cadena trófica · 5 min</small></span>
+          <span class="map-block__scenes">Escena 07</span>
+        </button>
+        <button class="map-block" type="button" data-slide="7">
+          <span class="map-block__num">05</span>
+          <span class="map-block__body"><strong>EL MUNDO DIJO BASTA</strong><small>Convenio + cierre · 3 min</small></span>
+          <span class="map-block__scenes">Escenas 08–09</span>
+        </button>
+      </div>
+      <div class="map-modal__foot">
+        <span><b>← →</b> navegar</span><span><b>S</b> guion</span><span><b>M</b> mapa</span><span><b>F</b> pantalla completa</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="transfer-layer" id="transferLayer" aria-hidden="true"></div>
+
+  <div class="help-toast" id="helpToast" role="status">
+    <span><b>← →</b> navegar</span><span><b>S</b> guion</span><span><b>M</b> mapa</span><span><b>F</b> pantalla completa</span>
+  </div>
+
+  <script src="assets/vendor/reveal.js"></script>
+  <script src="assets/vendor/anime.js"></script>
+  <script src="app.js?v=20261030-treaty-explorer-v3"></script>
+</body>
+</html>
